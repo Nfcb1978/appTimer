@@ -67,8 +67,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Exp.aspx" />
     <Content Include="Imagens\Ativo 1.png" />
+    <Content Include="Imagens\Ativo 17.png" />
+    <Content Include="Imagens\Ativo 18.png" />
+    <Content Include="Imagens\Ativo 19.png" />
     <Content Include="Imagens\Ativo 2.png" />
+    <Content Include="Imagens\Ativo 20.png" />
+    <Content Include="Imagens\Ativo 22.png" />
     <Content Include="Imagens\Ativo 3.png" />
     <Content Include="Imagens\Ativo 4.png" />
     <Content Include="Imagens\Ativo 5.png" />
@@ -79,6 +85,13 @@
     <Content Include="Welcome.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exp.aspx.cs">
+      <DependentUpon>Exp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Exp.aspx.designer.cs">
+      <DependentUpon>Exp.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Welcome.aspx.cs">
       <DependentUpon>Welcome.aspx</DependentUpon>

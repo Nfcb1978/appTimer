@@ -5,61 +5,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vertical Navbar</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    /* Estilo personalizado para o menu vertical */
-    .navbar-vertical {
-      background-color: #f8f9fa; /* Altere a cor de fundo conforme necessário */
+  <title>Navbar Vertical com Cards à Direita</title>
+  <!-- Adicione o CSS do Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+     <style>
+    /* Estilo personalizado para centralizar a imagem verticalmente */
+    .center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
     }
-    .navbar-vertical .navbar-nav {
-      width: 100%;
-    }
-    .navbar-vertical .nav-link {
-      padding: .5rem 1rem;
-      color: #000; /* Altere a cor do texto conforme necessário */
-    }
-    .navbar-vertical .nav-link:hover {
-      background-color: #e9ecef; /* Altere a cor de fundo do item ao passar o mouse */
+    .centro
+    {
+        text-align:CENTER;
     }
   </style>
+
 </head>
 <body>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Navbar Vertical -->
+ 
+      <nav class="col-md-1 col-lg-1 d-md-block bg-dark sidebar ">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="#"><img src="Imagens/Ativo 19.png" /></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><img src="Imagens/Ativo 1.png" /></a>
+            </li>
+               <li class="nav-item">
+              <a class="nav-link" href="#"><img src="Imagens/Ativo 2.png" /></a>
+            </li>
+               <li class="nav-item">
+              <a class="nav-link" href="#"><img src="Imagens/Ativo 3.png" /></a>
+            </li>
+               <li class="nav-item">
+              <a class="nav-link" href="#"><img src="Imagens/Ativo 4.png" /></a>
+            </li>
+               <li class="nav-item">
+              <a class="nav-link" href="#"><img src="Imagens/Ativo 5.png" /></a>
+            </li>
+               <li class="nav-item">
+              <a class="nav-link" href="#"><img src="Imagens/Ativo 6.png" /></a>
+            </li>
+               <li class="nav-item">
+              <a class="nav-link" href="#"><img src="Imagens/Ativo 7.png" /></a>
+            </li>
+               <li class="nav-item">
+              <a class="nav-link" href="#"><img src="Imagens/Ativo 8.png" /></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+          
+      <!-- Cards -->
+       
+      <main role="main" class="col-md-11 ml-sm-auto  col-lg-11 px-md-4">
+          
+       <div class="col-md-5">
+          <div class="centro">
+            <h5 class="h5">Seja Bem-Vindo</h5><br />
+         
+            <h3 class="h3">ESCOLHA UMA OPÇÃO</h3>
+        </div>
+            </div>  
+          <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+        <div class="center">
+      <img src="Imagens/Ativo 17.png" class="img-fluid ml-auto">
+     </div>
+        </div>
+    <div class="col-md-6">
+      <div class="card-body">
+        <h5 class="card-title">Inicio Rápido</h5>
+        <p class="card-text">Inicie rapidamente um trabalho.</p>
+         </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card-body">
+            <div class="center">
+      <h2 >></h2>
+   </div>
+           </div>
+    </div>
+  </div>
+</div>
+          
 
-<nav class="navbar navbar-vertical">
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="#"><img src="Imagens/Ativo 1.png" /> </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#"><img src="Imagens/Ativo 2.png" /></a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#"><img src="Imagens/Ativo 3.png" /></a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#"><img src="Imagens/Ativo 4.png" /></a>
-    </li>
-      <li class="nav-item">
-      <a class="nav-link" href="#"><img src="Imagens/Ativo 5.png" /></a>
-    </li>
-      <li class="nav-item">
-      <a class="nav-link" href="#"><img src="Imagens/Ativo 6.png" /></a>
-    </li>
-      <li class="nav-item">
-      <a class="nav-link" href="#"><img src="Imagens/Ativo 7.png" /></a>
-    </li>
-      <li class="nav-item">
-      <a class="nav-link" href="#"><img src="Imagens/Ativo 8.png" /></a>
-    </li>
-  </ul>
-</nav>
+  
+      </main>
+    </div>
 
-<!-- Bootstrap JS (opcional, necessário apenas se você estiver usando funcionalidades JS do Bootstrap) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+               
+  <!-- Scripts do Bootstrap (jQuery e Popper.js) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
