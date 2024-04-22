@@ -21,6 +21,10 @@
     {
         text-align:CENTER;
     }
+    #conometro
+    {
+        color: white;
+    }
   </style>
 
 </head>
@@ -35,6 +39,10 @@
             <li class="nav-item">
               <a class="nav-link active" href="#"><img src="Imagens/Ativo 19.png" /></a>
             </li>
+               <li class="nav-item">
+              <p id="conometro">00:00:00</p>
+            </li>
+
             <li class="nav-item">
               <a class="nav-link" href="#"></a>
             </li>
@@ -99,6 +107,115 @@
     </div>
   </div>
 </div>
+
+
+          <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+        <div class="center">
+      <img src="Imagens/Ativo 18.png" class="img-fluid ml-auto">
+     </div>
+        </div>
+    <div class="col-md-6">
+      <div class="card-body">
+        <h5 class="card-title">Tarefa Habitual</h5>
+        <p class="card-text">Inicie uma tarefa habitual ou única.</p>
+         </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card-body">
+            <div class="center">
+      <h2 >></h2>
+   </div>
+           </div>
+    </div>
+  </div>
+</div>
+
+
+   <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-6">
+        <div class="left">
+      <div class="card-body">
+        <h5 class="card-title">Iniciar Trabalho </h5>
+        <p class="card-text">Inicie um trabalho selecionando o cliente e a tarefa.</p>
+         </div>
+      </div>
+       </div>
+     
+    <div class="col-md-2">       
+      <div class="center">
+      <img src="Imagens/Ativo 24.png" class="img-fluid ml-auto">
+     </div>   
+        </div>
+   </div>
+
+       <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-6">
+        <div class="left">
+      <div class="card-body">
+        <h5 class="card-title">Entrega de Material </h5>
+        <p class="card-text">Inicie uma deslocação para entrega de material.</p>
+         </div>
+      </div>
+       </div>
+     
+    <div class="col-md-2">       
+      <div class="center">
+      <img src="Imagens/Ativo 25.png" class="img-fluid ml-auto">
+     </div>   
+        </div>
+   </div>
+
+           <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-6">
+        <div class="left">
+      <div class="card-body">
+        <h5 class="card-title">Consultar Trabalhos </h5>
+        <p class="card-text">Consulte todos os trabalhos realizados.</p>
+         </div>
+      </div>
+       </div>
+     
+    <div class="col-md-2">       
+      <div class="center">
+      <img src="Imagens/Ativo 26.png" class="img-fluid ml-auto">
+     </div>   
+        </div>
+   </div>
+
+               <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-6">
+        <div class="left">
+      <div class="card-body">
+        <h5 class="card-title">Agenda Virtual </h5>
+        <p class="card-text">Agende e organize o seu trabalho.</p>
+         </div>
+      </div>
+       </div>
+     
+    <div class="col-md-2">       
+      <div class="center">
+      <img src="Imagens/Ativo 27.png" class="img-fluid ml-auto">
+     </div>   
+        </div>
+   </div>
+           
+    </div>
+  </div>
+
+         <div class="col-md-8">
+          <div class="centro">
+            <h5 class="h5">Total Trabalhado hoje: 00:00:00</h5>
+         
+           
+        </div>
+            </div> 
+
           
 
   

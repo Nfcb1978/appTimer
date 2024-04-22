@@ -9,9 +9,15 @@ namespace appTimer
 {
     public partial class Welcome : System.Web.UI.Page
     {
+        private Timer timer;
+        private DateTime horaInicio;
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
+
+
+
     }
 }
