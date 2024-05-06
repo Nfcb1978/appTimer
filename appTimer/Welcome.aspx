@@ -29,6 +29,9 @@
 
 </head>
 <body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
   <div class="container-fluid">
     <div class="row">
       <!-- Navbar Vertical -->
@@ -37,11 +40,21 @@
         <div class="sidebar-sticky">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link active" href="#"><img src="Imagens/Ativo 19.png" /></a>
+              <a class="nav-link active" href="#"> <asp:Timer ID="Timer1" runat="server" Interval="1000" OnTick="Timer1_Tick">
+                  </asp:Timer>
+                  <asp:ImageButton ID="Btn_conometro" ImageUrl="~/Imagens/Ativo 20.png" OnClick="Btn_conometro_Click" runat="server" /></a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link active" href="#">
+                  <asp:ImageButton ID="Btn_Pausa" ImageUrl="~/Imagens/Ativo 19.png" OnClick="Btn_Pausa_Click" runat="server" />
+                 
+                  </a>
             </li>
                <li class="nav-item">
-              <p id="conometro">00:00:00</p>
-            </li>
+              <p id="conometro">
+                  <asp:Label ID="lblTempo" runat="server" Text="00:00.00"></asp:Label></p>
+                 
+               </li>
 
             <li class="nav-item">
               <a class="nav-link" href="#"></a>
@@ -227,5 +240,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</form>
 </body>
 </html>
