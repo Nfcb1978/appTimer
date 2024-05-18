@@ -67,6 +67,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="appCliente.aspx" />
+    <Content Include="appWelcome.aspx" />
     <Content Include="Imagens\Ativo 1.png" />
     <Content Include="Imagens\Ativo 17.png" />
     <Content Include="Imagens\Ativo 18.png" />
@@ -88,6 +90,27 @@
     <Content Include="Welcome.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="appCliente.aspx.cs">
+      <DependentUpon>appCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="appCliente.aspx.designer.cs">
+      <DependentUpon>appCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="appWelcome.aspx.cs">
+      <DependentUpon>appWelcome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="appWelcome.aspx.designer.cs">
+      <DependentUpon>appWelcome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Baseapp.Master.cs">
+      <DependentUpon>Baseapp.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Baseapp.Master.designer.cs">
+      <DependentUpon>Baseapp.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Welcome.aspx.cs">
       <DependentUpon>Welcome.aspx</DependentUpon>
@@ -98,6 +121,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Baseapp.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -106,7 +130,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="JS\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

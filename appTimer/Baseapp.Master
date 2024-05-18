@@ -1,0 +1,126 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Baseapp.master.cs" Inherits="appTimer.Baseapp" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+     <style>
+    /* Estilo personalizado para centralizar a imagem verticalmente */
+    .center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+    .centro
+    {
+        text-align:CENTER;
+    }
+    #conometro
+    {
+        color: white;
+    }
+  </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server"> <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager><div class="container-fluid">
+    <div class="row">
+      <!-- Navbar Vertical -->
+ 
+      <nav class="col-md-1 col-lg-1 d-md-block bg-dark sidebar ">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="#"> <asp:Timer ID="Timer1" OnTick="Timer1_Tick" runat="server" Interval="1000" >
+                  </asp:Timer>
+                  <asp:ImageButton ID="Btn_conometro" ImageUrl="~/Imagens/Ativo 20.png" OnClick="Btn_conometro_Click"  runat="server" /></a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link active" href="#">
+                  <asp:ImageButton ID="Btn_Pausa" ImageUrl="~/Imagens/Ativo 19.png" OnClick="Btn_Pausa_Click"  runat="server" />
+                 
+                  </a>
+            </li>
+               <li class="nav-item">
+              <p id="conometro">
+                  <asp:Label ID="lblTempo" runat="server" Text="00:00.00"></asp:Label></p>
+                 
+               </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#"><br /></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><img src="Imagens/Ativo 1.png" /></a>
+            </li>
+               <li class="nav-item">
+              <a class="nav-link" href="#"><img src="Imagens/Ativo 2.png" /></a>
+            </li>
+               <li class="nav-item">
+             <p>   <br />
+
+             </p>
+            </li>
+               <li class="nav-item">
+              <a class="nav-link" href="#"><img src="Imagens/Ativo 3.png" /></a>
+            </li>
+               <li class="nav-item">
+              <a class="nav-link" href="#"><img src="Imagens/Ativo 4.png" /></a>
+            </li>
+               <li class="nav-item">
+              <a class="nav-link" href="#"><img src="Imagens/Ativo 5.png" /></a>
+                           </li>
+              <li class="nav-item">
+              <p style ="color:aliceblue">_______</p>
+            </li>
+
+
+               <li class="nav-item">
+              <a class="nav-link" href="#"><img src="Imagens/Ativo 6.png" /></a>
+            </li>
+               <li class="nav-item">
+              <a class="nav-link" href="#"><img src="Imagens/Ativo 7.png" /></a>
+            </li>
+               <li class="nav-item">
+              <a class="nav-link" href="#"><img src="Imagens/Ativo 8.png" /></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+          
+      <!-- Cards -->
+       
+      <main role="main" class="col-md-11 ml-sm-auto  col-lg-11 px-md-4">
+          
+       
+
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+          <div class="col-md-8">
+          <div class="centro">
+            <h5 class="h5">Total Trabalhado hoje: <asp:Label ID="lb_total" runat="server" Text="00:00:00"></asp:Label></h5>
+         
+           
+        </div>
+            </div> 
+
+
+           </main>
+    </div>
+
+               
+  <!-- Scripts do Bootstrap (jQuery e Popper.js) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </form>
+</body>
+</html>
