@@ -144,7 +144,8 @@
 
 
 
-                    <div class="col-md-8">
+                    <div class="col-md-8" style=""  position: absolute;
+            bottom: 0;">
                         <div class="centro">
                             <h5 class="h5">Total Trabalhado hoje:
                                 <asp:Label ID="lb_total" runat="server" Text="00:00:00"></asp:Label></h5>

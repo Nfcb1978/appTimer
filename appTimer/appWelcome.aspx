@@ -35,7 +35,7 @@
    
     <main role="main"  class="col-md-11 ml-sm-auto  col-lg-11 px-md-4">
         
-        <div class="col-md-5">
+        <div class="col-12">
             <div class="centro">
                 <h5 class="h5">Seja Bem-Vindo</h5>
                 <br />
@@ -45,7 +45,7 @@
         </div>
         <div class="card mb-3" style=" background-color:darkslategray ">
             <div class="row g-0">
-                <div class="col-md-4">
+                <div class="col-md-1">
                     <div class="center">
                         <img src="Imagens/Ativo 17.png" class="img-fluid ml-auto">
                     </div>
@@ -69,7 +69,7 @@
 
      <div class="card mb-3" style=" background-color:darkslategray ">
             <div class="row g-0">
-                <div class="col-md-4">
+                <div class="col-md-1">
                     <div class="center">
                         <img src="Imagens/Ativo 18.png" class="img-fluid ml-auto">
                     </div>
@@ -112,6 +112,8 @@
             </div>
         </div>
 
+       </div>
+        
 
       <div class="card mb-3" style=" background-color:darkslategray ">
             <div class="row g-0">
@@ -133,6 +135,7 @@
                 </div>
             </div>
         </div>
+          </div>
 
       <div class="card mb-3" style=" background-color:darkslategray ">
             <div class="row g-0">
@@ -153,6 +156,8 @@
                     </div>
                 </div>
             </div>
+           </div>
+
 <div class="card mb-3" style=" background-color:darkslategray ">
                 <div class="row g-0">
                     <div class="col-md-6">
@@ -174,7 +179,7 @@
                 </div>
 
             </div>
-        </div>
+       
                
     </main>
      
