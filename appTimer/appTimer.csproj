@@ -67,7 +67,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="adicionarCliente.aspx" />
     <Content Include="appCliente.aspx" />
+    <Content Include="AppCliente2.aspx" />
     <Content Include="appWelcome.aspx" />
     <Content Include="Imagens\Ativo 1.png" />
     <Content Include="Imagens\Ativo 16.png" />
@@ -87,16 +89,32 @@
     <Content Include="Imagens\Ativo 6.png" />
     <Content Include="Imagens\Ativo 7.png" />
     <Content Include="Imagens\Ativo 8.png" />
+    <Content Include="Imagens\OIP.jpg" />
+    <Content Include="Imagens\stop.png" />
+    <Content Include="tarefa.aspx" />
     <Content Include="Web.config" />
-    <Content Include="Welcome.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adicionarCliente.aspx.cs">
+      <DependentUpon>adicionarCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adicionarCliente.aspx.designer.cs">
+      <DependentUpon>adicionarCliente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="appCliente.aspx.cs">
       <DependentUpon>appCliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="appCliente.aspx.designer.cs">
       <DependentUpon>appCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AppCliente2.aspx.cs">
+      <DependentUpon>AppCliente2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AppCliente2.aspx.designer.cs">
+      <DependentUpon>AppCliente2.aspx</DependentUpon>
     </Compile>
     <Compile Include="appWelcome.aspx.cs">
       <DependentUpon>appWelcome.aspx</DependentUpon>
@@ -113,12 +131,12 @@
       <DependentUpon>Baseapp.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Welcome.aspx.cs">
-      <DependentUpon>Welcome.aspx</DependentUpon>
+    <Compile Include="tarefa.aspx.cs">
+      <DependentUpon>tarefa.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Welcome.aspx.designer.cs">
-      <DependentUpon>Welcome.aspx</DependentUpon>
+    <Compile Include="tarefa.aspx.designer.cs">
+      <DependentUpon>tarefa.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

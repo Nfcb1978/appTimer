@@ -11,61 +11,43 @@ namespace appTimer
 {
 
 
-    public partial class Welcome
+    public partial class tarefa
     {
 
         /// <summary>
-        /// form1 control.
+        /// LinkButton3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton3;
 
         /// <summary>
-        /// ScriptManager1 control.
+        /// Lb_InicioRapido control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.WebControls.LinkButton Lb_InicioRapido;
 
         /// <summary>
-        /// Timer1 control.
+        /// Lb_asistTecnica control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.Timer Timer1;
+        protected global::System.Web.UI.WebControls.LinkButton Lb_asistTecnica;
 
         /// <summary>
-        /// Btn_conometro control.
+        /// Lb_Instalacao control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Btn_conometro;
-
-        /// <summary>
-        /// Btn_Pausa control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Btn_Pausa;
-
-        /// <summary>
-        /// lblTempo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTempo;
+        protected global::System.Web.UI.WebControls.LinkButton Lb_Instalacao;
     }
 }

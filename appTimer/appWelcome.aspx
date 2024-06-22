@@ -33,7 +33,7 @@
         }
     </style>
    
-    <main role="main"  class="col-md-11 ml-sm-auto  col-lg-11 px-md-4">
+    <main role="main"  class="col-md-12 ml-sm-auto  col-lg-12 px-m-0 ms-0">
         
         <div class="col-12">
             <div class="centro">
@@ -182,5 +182,6 @@
        
                
     </main>
+     
      
 </asp:Content>

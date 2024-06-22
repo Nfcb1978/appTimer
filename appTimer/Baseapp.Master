@@ -29,6 +29,49 @@
         }
 
     </style>
+    <script type="text/javascript">
+        var timer;
+        var seconds = 0;
+
+        function formatTime(seconds) {
+            var h = Math.floor(seconds / 3600).toString().padStart(2, '0');
+            var m = Math.floor((seconds % 3600) / 60).toString().padStart(2, '0');
+            var s = (seconds % 60).toString().padStart(2, '0');
+            return h + ':' + m + ':' + s;
+        }
+
+        function updateTimer() {
+            document.getElementById('timerDisplay').innerText = formatTime(seconds);
+            seconds++;
+        }
+
+        function startTimer() {
+            if (!timer) {
+                timer = setInterval(updateTimer, 1000);
+            }
+            document.getElementById('start').style.display = 'none';
+            document.getElementById('stop').style.display = 'inline';
+        }
+
+        function stopTimer() {
+            if (timer) {
+                clearInterval(timer);
+                timer = null;
+                document.getElementById('start').style.display = 'inline';
+                document.getElementById('stop').style.display = 'none';
+            }
+        }
+
+        function resetTimer() {
+            stopTimer();
+            seconds = 0;
+            document.getElementById('timerDisplay').innerText = '00:00:00';
+
+            function esconderBotao() {
+               
+            }
+        }
+    </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -38,26 +81,30 @@
         <div class="container-fluid">
             <div class="row">
                 <!-- Navbar Vertical -->
-
+       
                 <nav class="col-md-1 col-lg-1 d-md-block bg-dark sidebar ">
                     <div class="sidebar-sticky">
                         <ul class="nav flex-column">
                             <li class="nav-item">
                                 <a class="nav-link active" href="#">
-                                    <asp:Timer ID="Timer1" OnTick="Timer1_Tick" runat="server" Interval="1000">
-                                    </asp:Timer>
-                                    <asp:ImageButton ID="Btn_conometro" ImageUrl="~/Imagens/Ativo 20.png" OnClick="Btn_conometro_Click" runat="server" /></a>
+                         
+       
+        <button id="start" type="button" onclick="startTimer()"><img src="Imagens/Ativo 20.png" /></button>
+         <button id="stop" type="button" style="display: none;" onclick="stopTimer()"><img src="Imagens/Ativo 19.png" /></button>
+      
+
+                                </a>
+                            
+                                   
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link active" href="#">
-                                    <asp:ImageButton ID="Btn_Pausa" ImageUrl="~/Imagens/Ativo 19.png" OnClick="Btn_Pausa_Click" runat="server" />
+                                    <button type="button" onclick="resetTimer()"><img src="Imagens/stop.png" /></button>
 
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <p id="conometro">
-                                    <asp:Label ID="lblTempo" runat="server" Text="00:00.00"></asp:Label>
-                                </p>
+                              <div id="timerDisplay">00:00:00</div>
 
                             </li>
 
@@ -127,10 +174,10 @@
                         </ul>
                     </div>
                 </nav>
-
+                
                 <!-- Cards -->
 
-                <main role="main" class="col-md-11 ml-sm-auto  col-lg-11 px-md-4">
+                <main role="main" class="col-md-11 ml-sm-auto  col-lg-11 px-md-0 ">
 
 
 
@@ -144,7 +191,7 @@
 
 
 
-                    <div class="col-md-8" style=""  position: absolute;
+                    <div class="col-md-8" style="  position: absolute;
             bottom: 0;">
                         <div class="centro">
                             <h5 class="h5">Total Trabalhado hoje:
@@ -160,9 +207,10 @@
 
 
             <!-- Scripts do Bootstrap (jQuery e Popper.js) -->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   <!--         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>  
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+            
         </div>
     </form>
 </body>

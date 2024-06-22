@@ -7,13 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace appTimer
 {
-    public partial class appWelcome : System.Web.UI.Page
+    public partial class tarefa : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-
-        
     }
 }

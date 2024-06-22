@@ -11,7 +11,7 @@ namespace appTimer
 {
 
 
-    public partial class appCliente
+    public partial class AppCliente2
     {
 
         /// <summary>
@@ -24,21 +24,21 @@ namespace appTimer
         protected global::System.Web.UI.WebControls.LinkButton Lb_InicioRapido;
 
         /// <summary>
-        /// rtp_cliente control.
+        /// Lb_Minho_Brinde control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rtp_cliente;
+        protected global::System.Web.UI.WebControls.LinkButton Lb_Minho_Brinde;
 
         /// <summary>
-        /// SqlDataSource1 control.
+        /// Lb_Cafe_Ameadela control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.LinkButton Lb_Cafe_Ameadela;
     }
 }

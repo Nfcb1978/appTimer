@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Baseapp.Master" AutoEventWireup="false" CodeBehind="appCliente.aspx.cs" Inherits="appTimer.appCliente" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Baseapp.Master" AutoEventWireup="true" CodeBehind="AppCliente2.aspx.cs" Inherits="appTimer.AppCliente2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
     <style>
         /* Estilo personalizado para centralizar a imagem verticalmente */
         .center {
@@ -61,22 +61,22 @@
 
          <div class="card mb-3" style=" background-color:#333 ">
             <div class="row g-0">
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <div class="left">
-                       
-                          <div class="input-group mx-sm-3 mb-2" >
-
-                <input type="search" style=" color:white; background-color:darkslategray " class="form-control" placeholder="Procura um projecto..." >
-              
-                              <div class="input-group-append">
-                    <span class="input-group-text"><i class="fas fa-search" style="color:darkslategray"></i></span>
-                </div>
-            </div>
-
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <p class="card-text">Procurar um projecto...</p>
+                            </h5>
+                           
+                        </div>
                     </div>
                 </div>
      
-            
+            <div class="col-md-2">
+                <div class="center">
+                    <img src="Imagens/OIP.jpg" class="img-fluid ml-auto">
+                </div>
+            </div>
         </div>
 
        </div>
@@ -95,45 +95,39 @@
             </div>
         </div>
 
-
-
-                 
-                        <asp:Repeater ID="rtp_cliente" runat="server" DataSourceID="SqlDataSource1" OnItemDataBound="rtp_cliente_ItemDataBound">
-<ItemTemplate>
-
-       
-
-        <div class="card mb-3" style=" background-color:#333 ">
+     <div class="card mb-3" style=" background-color:#333 ">
              <div class="row g-0">
                <div class="col-md-12">
                     <div class="card-body">
-           
-                
-    <asp:Label ID="lbl_cliente" runat="server" Text="" CssClass="center" Font-Bold="True" Font-Size="Large"></asp:Label>
-      
-                      
-                   
-                        </div>
+                        
+                            <asp:LinkButton  ID="Lb_Minho_Brinde" runat="server" ForeColor="White">Minho Brinde</asp:LinkButton>
+                       
+                    </div>
                     </div>
                
            </div>
+                
             </div>
 
-    </ItemTemplate>
 
-
-
-                        </asp:Repeater> 
+     
+         <div class="card mb-3" style=" background-color:#333 ">
+              
+            <div class="row g-0">
+               <div class="col-md-12">
+                    <div class="card-body">
                        
-
-
-
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TimerConnectionString %>" SelectCommand="SELECT * FROM [Clientes]"></asp:SqlDataSource>
-                   
-             
-
+                            <asp:LinkButton CssClass="custom-linkbutton" ID="Lb_Cafe_Ameadela" runat="server" ForeColor="White">Café Ameadela</asp:LinkButton>
+                       
+                  
+                          </div>
+                    
+               
+                    </div>
+                
+            </div>
+        </div>
+       
                
     </main>
-    
-
 </asp:Content>
