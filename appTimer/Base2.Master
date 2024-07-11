@@ -1,11 +1,10 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Baseapp.master.cs" Inherits="appTimer.Baseapp" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Base2.master.cs" Inherits="appTimer.Base2" %>
 
 <!DOCTYPE html>
 
 <html>
 <head runat="server">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <style>
         /* Estilo personalizado para centralizar a imagem verticalmente */
@@ -20,7 +19,7 @@
             text-align: CENTER;
         }
 
-        #timerDisplay {
+        #timerDisplay{
             color: white;
         }
 
@@ -51,6 +50,8 @@
             }
             document.getElementById('start').style.display = 'none';
             document.getElementById('stop').style.display = 'inline';
+            document.getElementById('start1').style.display = 'none';
+            document.getElementById('stop1').style.display = 'inline';
         }
 
         function stopTimer() {
@@ -59,6 +60,8 @@
                 timer = null;
                 document.getElementById('start').style.display = 'inline';
                 document.getElementById('stop').style.display = 'none';
+                document.getElementById('start1').style.display = 'inline';
+                document.getElementById('stop1').style.display = 'none';
             }
         }
 
@@ -76,7 +79,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form2" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div class="container-fluid">
             <div class="row">
@@ -177,41 +180,17 @@
                 
                 <!-- Cards -->
 
-                <main role="main" class="col-md-11 ml-sm-auto  col-lg-11 px-md-0 ">
-
-
-
-
-                    <div>
-                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                        </asp:ContentPlaceHolder>
-                    </div>
-
-                     
-
-
-
-                    <div class="col-md-8" style="  position: absolute;
-            bottom: 0;">
-                        <div class="centro">
-                            <h5 class="h5">Total Trabalhado hoje:
-                                <asp:Label ID="lb_total" runat="server" Text="00:00:00"></asp:Label></h5>
-
-
-                        </div>
-                    </div>
-
-
-                </main>
-            </div>
-
-
-            <!-- Scripts do Bootstrap (jQuery e Popper.js) -->
-   <!--         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>  
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
-            
+                
+  <main role="main" class="col-md-11 ml-sm-auto  col-lg-11 px-md-0 ">
+       <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
         </div>
+
+      </main>
+           
+                 </div>
+             </div>
     </form>
 </body>
 </html>

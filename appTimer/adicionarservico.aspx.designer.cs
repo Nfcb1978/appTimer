@@ -11,34 +11,25 @@ namespace appTimer
 {
 
 
-    public partial class AppCliente2
+    public partial class adicionarservico
     {
 
         /// <summary>
-        /// Lb_InicioRapido control.
+        /// tbServico control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Lb_InicioRapido;
+        protected global::System.Web.UI.WebControls.TextBox tbServico;
 
         /// <summary>
-        /// Lb_Minho_Brinde control.
+        /// Btn_Inserir control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Lb_Minho_Brinde;
-
-        /// <summary>
-        /// Lb_Cafe_Ameadela control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Lb_Cafe_Ameadela;
+        protected global::System.Web.UI.WebControls.Button Btn_Inserir;
     }
 }

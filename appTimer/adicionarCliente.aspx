@@ -60,7 +60,7 @@
 
 
          
-              <div class="form-group">
+ <div class="form-group">
                <label for="nome"><b>Nome:</b></label>
             <asp:TextBox ID="tbNome" runat="server" placeholder="Insira o seu nome" CssClass="form-control" required Font-Bold="True"></asp:TextBox>
                </div>
@@ -80,7 +80,7 @@
                <label for="´freguesia"><b>Freguesia:</b></label>
             <asp:TextBox ID="tb_freguesia" runat="server" placeholder="Insira a sua freguesia" CssClass="form-control" Font-Bold="True"></asp:TextBox>
                </div>   
-        <div class="form-group">
+       <div class="form-group">
                <label for="longitude"><b>Longitude:</b></label>
             <asp:TextBox ID="tb_longitude" runat="server" placeholder="Insira a longitude da localização" CssClass="form-control"  Font-Bold="True"></asp:TextBox>
                </div>   
@@ -99,7 +99,7 @@
          <div class="form-group">
              <label for="telefone2">Telemovel2:</label>
             <asp:TextBox ID="tb_telemovel2" runat="server" placeholder="insira o segundo telemóvel" CssClass="form-control" TextMode="SingleLine" Font-Bold="True"></asp:TextBox>
-              </div>            
+              </div>              
             <div class="form-group">
              <label for="telefone">Telefone:</label>
             <asp:TextBox ID="tb_telefone" runat="server" placeholder="insira o seu telefone" CssClass="form-control" TextMode="SingleLine" Font-Bold="True"></asp:TextBox>

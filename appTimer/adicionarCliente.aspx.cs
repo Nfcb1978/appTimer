@@ -6,11 +6,9 @@ using System.Web.UI;
 
 using System.Web.UI.WebControls;
 using System.Data;
+using System.IO;
 using System.Data.SqlClient;
 using System.Configuration;
-
-using System.Net;
-using System.Net.Mail;
 
 namespace appTimer
 {

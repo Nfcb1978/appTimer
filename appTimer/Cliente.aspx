@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Baseapp.Master" AutoEventWireup="false" CodeBehind="appCliente.aspx.cs" Inherits="appTimer.appCliente" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Baseapp.Master" AutoEventWireup="true" CodeBehind="Cliente.aspx.cs" Inherits="appTimer.WebForm2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         /* Estilo personalizado para centralizar a imagem verticalmente */
@@ -98,42 +98,12 @@
 
 
                  
-                        <asp:Repeater ID="rtp_cliente" runat="server" DataSourceID="SqlDataSource1" OnItemDataBound="rtp_cliente_ItemDataBound">
-<ItemTemplate>
-
-       
-
-        <div class="card mb-3" style=" background-color:#333 ">
-             <div class="row g-0">
-               <div class="col-md-12">
-                    <div class="card-body">
-           
-                
-    <asp:Label ID="lbl_cliente" runat="server" Text="" CssClass="center" Font-Bold="True" Font-Size="Large"></asp:Label>
-      
-                      
-                   
-                        </div>
-                    </div>
-               
-           </div>
-            </div>
-
-    </ItemTemplate>
-
-
-
-                        </asp:Repeater> 
+                     
                        
 
 
 
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TimerConnectionString %>" SelectCommand="SELECT * FROM [Clientes]"></asp:SqlDataSource>
-                   
-             
-
-               
-    </main>
-    
-
+                       
+             </main>         
+        <asp:Xml ID="Xml1" runat="server" TransformSource="~/formataCliente.xslt"></asp:Xml>
 </asp:Content>

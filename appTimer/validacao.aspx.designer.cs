@@ -11,34 +11,43 @@ namespace appTimer
 {
 
 
-    public partial class appCliente
+    public partial class validacao
     {
 
         /// <summary>
-        /// Lb_InicioRapido control.
+        /// lbl_nome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Lb_InicioRapido;
+        protected global::System.Web.UI.WebControls.Label lbl_nome;
 
         /// <summary>
-        /// rtp_cliente control.
+        /// lbl_servico control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rtp_cliente;
+        protected global::System.Web.UI.WebControls.Label lbl_servico;
 
         /// <summary>
-        /// SqlDataSource1 control.
+        /// tb_Notas control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.TextBox tb_Notas;
+
+        /// <summary>
+        /// btn_iniciar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_iniciar;
     }
 }
