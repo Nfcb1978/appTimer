@@ -41,6 +41,7 @@
 
         function updateTimer() {
             document.getElementById('timerDisplay').innerText = formatTime(seconds);
+            document.getElementById('cronometro').innerText = formatTime(seconds);
             seconds++;
         }
 
@@ -52,6 +53,7 @@
             document.getElementById('stop').style.display = 'inline';
             document.getElementById('start1').style.display = 'none';
             document.getElementById('stop1').style.display = 'inline';
+          
         }
 
         function stopTimer() {
@@ -69,10 +71,9 @@
             stopTimer();
             seconds = 0;
             document.getElementById('timerDisplay').innerText = '00:00:00';
-
-            function esconderBotao() {
-               
-            }
+            document.getElementById('cronometro').innerText = '00:00:00';
+         
+            
         }
     </script>
     <asp:ContentPlaceHolder ID="head" runat="server">

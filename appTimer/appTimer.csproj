@@ -97,6 +97,8 @@
     <Content Include="validacao.aspx" />
     <Content Include="Web.config" />
     <Content Include="Cliente.aspx" />
+    <Content Include="WebForm1.aspx" />
+    <Content Include="WebForm3.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="adicionarCliente.aspx.cs">
@@ -162,6 +164,20 @@
     </Compile>
     <Compile Include="validacao.aspx.designer.cs">
       <DependentUpon>validacao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm3.aspx.cs">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm3.aspx.designer.cs">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

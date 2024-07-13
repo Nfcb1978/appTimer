@@ -1,13 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Base2.Master" AutoEventWireup="true" CodeBehind="validacao.aspx.cs" Inherits="appTimer.validacao" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
- 
-
-    <style>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Signature Boxes</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+   <style>
         .signature {
             border: 1px solid #000;
-            width: 80%;
+            width: 400px;
             height:200px; 
             margin-bottom: 20px;
             background-color:white;
@@ -76,18 +77,21 @@
          }
         
     </style>
-     
-     <div class ="container">
+</head>
+<body>
+    <form id="form1" runat="server">
+        
+    <div class ="container">
       <main role="main"  class="col-md-12 ml-sm-auto  col-lg-12 px-m-0 ms-0">
    
 
           <div class="col-12">
             <div class="inicio">
-             <button id="start1" type="button" onclick="startTimer()"><img src="Imagens/Ativo 21.png" /></button>
+               <!-- <button id="start1" type="button" onclick="startTimer()"><img src="Imagens/Ativo 21.png" /></button>
          <button id="stop1" type="button" style="display: none;" onclick="stopTimer()"><img src="Imagens/Ativo 22.png" /></button>
                 <br />
                     
-        
+         -->          
                 <br />
 
                
@@ -210,37 +214,60 @@
         <asp:Button ID="btn_iniciar" CssClass="btn-primary w-100" runat="server" Text="INICIAR TRABALHO" />
       
        </div>
-        
-
-    <script>
-
-
-        function setupCanvas(canvasId) {
-            const canvas = document.getElementById(canvasId);
+          <script>
+    function setupCanvas1(signature1) {
+            const canvas = document.getElementById(signature1);
             const ctx = canvas.getContext('2d');
             let drawing = false;
 
-            canvas.addEventListener('mousedown', () => drawing = true);
-            canvas.addEventListener('mouseup', () => {
-                drawing = false;
-                ctx.beginPath();
-            });
-            canvas.addEventListener('mousemove', event => draw(event, canvas, ctx));
-
-            function draw(event, canvas, ctx) {
+            canvas.addEventListener('mousedown', () => { drawing = true });
+            canvas.addEventListener('mouseup', () => { drawing = false; ctx.beginPath() });
+            canvas.addEventListener('mousemove', event => draw(event, signature1));
+            
+            function draw(event, signature1) {
                 if (!drawing) return;
-
-                const rect = canvas.getBoundingClientRect();
+                const canvas = document.getElementById(signature1);
+                const ctx = canvas.getContext('2d');
                 ctx.lineWidth = 2;
                 ctx.lineCap = 'round';
                 ctx.strokeStyle = '#000';
 
-                ctx.lineTo(event.clientX - rect.left, event.clientY - rect.top);
+                ctx.lineTo((event.clientX - canvas.offsetLeft - 200)/2.1, event.clientY - canvas.offsetTop);
                 ctx.stroke();
                 ctx.beginPath();
-                ctx.moveTo(event.clientX - rect.left, event.clientY - rect.top);
+                ctx.moveTo((event.clientX - canvas.offsetLeft - 200)/2.1, event.clientY - canvas.offsetTop);
+                console.log(canvas.offsetLeft + "-" + event.clientX + "-" + canvas.offsetTop + "-" + event.clientY);
             }
+              
+            
         }
+        function setupCanvas2(signature2) {
+            const canvas = document.getElementById(signature2);
+            const ctx = canvas.getContext('2d');
+            let drawing = false;
+
+            canvas.addEventListener('mousedown', () => { drawing = true });
+            canvas.addEventListener('mouseup', () => { drawing = false; ctx.beginPath() });
+            canvas.addEventListener('mousemove', event => draw(event, signature2));
+
+            function draw(event, signature1) {
+                if (!drawing) return;
+                const canvas = document.getElementById(signature2);
+                const ctx = canvas.getContext('2d');
+                ctx.lineWidth = 2;
+                ctx.lineCap = 'round';
+                ctx.strokeStyle = '#000';
+
+                ctx.lineTo((event.clientX - canvas.offsetLeft - 200) / 2.1, event.clientY - canvas.offsetTop);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo((event.clientX - canvas.offsetLeft - 200) / 2.1, event.clientY - canvas.offsetTop);
+                console.log(canvas.offsetLeft + "-" + event.clientX + "-" + canvas.offsetTop + "-" + event.clientY);
+            }
+
+
+        }
+
 
         function clearSignature(canvasId) {
             const canvas = document.getElementById(canvasId);
@@ -256,9 +283,9 @@
         }
 
         // Setup both canvases
-        setupCanvas('signature1');
-        setupCanvas('signature2');
-    </script>
-
-
-</asp:Content>
+        setupCanvas1('signature1');
+              setupCanvas2('signature2');
+          </script>
+         </form>
+</body>
+</html>
