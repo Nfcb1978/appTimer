@@ -1,26 +1,25 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Services;
-using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
 
-
 namespace appTimer
 {
-    public partial class validacao : System.Web.UI.Page
+    public partial class Pagina : System.Web.UI.Page
     {
-
         public static string Hours { get; set; }
         public static string Minutes { get; set; }
         public static string Seconds { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-       
+
         }
 
         [WebMethod]

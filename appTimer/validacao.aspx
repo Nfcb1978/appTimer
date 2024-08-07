@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Base2.Master" AutoEventWireup="true" CodeBehind="validacao.aspx.cs" Inherits="appTimer.validacao" %>
+﻿    <%@ Page Title="" Language="C#" MasterPageFile="~/Base2.Master" AutoEventWireup="true" CodeBehind="validacao.aspx.cs" Inherits="appTimer.validacao" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -11,6 +11,8 @@
             height:200px; 
             margin-bottom: 20px;
             background-color:white;
+            margin-left:10%;
+    
           
             
         
@@ -29,6 +31,13 @@
             justify-content: center;
             height: 100%;
         }
+         #total
+         {
+             display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+         }
 
         .inicio {
             text-align: center;
@@ -55,6 +64,7 @@
         .card-body{
            
             background-color:#333;
+            text-align:center;
            
 
         }
@@ -99,7 +109,7 @@
                     <div class="card-body">
         
                 
-    <asp:Label ID="lbl_nome" runat="server" Text="" CssClass="center" Font-Bold="True" Font-Size="Large"></asp:Label>
+    
       
                       
                    
@@ -130,9 +140,10 @@
                     <div class="card-body">
         
                 
- <div id="cronometro">00:00:00</div>
+<h2> <div class="btn-primary" id="cronometro">00:00:00</div></h2>
       
-                      
+                      <h6> <div id="total" >Total Hoje: 00:00:00</div></h6>
+      
                    
                         </div>
                     </div>
@@ -145,7 +156,28 @@
         </div>
 
 
+          
+         <div class="card mb-3" style=" background-color:#333 ">
+            <div class="row g-0">
+                <div class="col-md-12">
+                    <div class="left">
+                       
+                          <div class="input-group mx-sm-3 mb-2" >
 
+                <input type="search" style=" color:white; background-color:darkslategray " class="form-control" placeholder="Procura um projecto..." >
+              
+                              <div class="input-group-append">
+                    <span class="input-group-text"><i class="fas fa-search" style="color:darkslategray"></i></span>
+                </div>
+            </div>
+
+                    </div>
+                </div>
+     
+            
+        </div>
+
+       </div>
 
   </main>
           </div>
@@ -234,11 +266,11 @@
                 ctx.lineWidth = 2;
                 ctx.lineCap = 'round';
                 ctx.strokeStyle = '#000';
-
-                ctx.lineTo(event.clientX - rect.left, event.clientY - rect.top);
+                
+                ctx.lineTo((event.clientX - rect.left)/2.4, event.clientY - rect.top);
                 ctx.stroke();
                 ctx.beginPath();
-                ctx.moveTo(event.clientX - rect.left, event.clientY - rect.top);
+                ctx.moveTo((event.clientX - rect.left)/2.4, event.clientY - rect.top);
             }
         }
 

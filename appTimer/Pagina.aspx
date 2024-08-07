@@ -1,11 +1,9 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Base2.master.cs" Inherits="appTimer.Base2" %>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Pagina.aspx.cs" Inherits="appTimer.Pagina" %>
+<%@ Import Namespace="System.Web.Services" %>
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
     <style>
         /* Estilo personalizado para centralizar a imagem verticalmente */
         .center {
@@ -28,54 +26,74 @@
 
 
     </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        function sendData() {
+         
+            var h = Math.floor(seconds / 3600).toString().padStart(2, '0');
+            var m = Math.floor((seconds % 3600) / 60).toString().padStart(2, '0');
+            var s = (seconds % 60).toString().padStart(2, '0');
+
+            $.ajax({
+                type: "POST",
+                url: "Pagina.aspx/SaveTime",
+                data: JSON.stringify({ hours: h, minutes: m, seconds: s }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    console.log("Time sent successfully!");
+                },
+                error: function (xhr, status, error) {
+                    console.log("Error sending time.");
+                    console.log("Status:", status);
+                    console.log("Error:", error);
+                    console.log("Response Text:", xhr.responseText);
+                }
+            });
+        }
+    </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">
         var seconds = 0;
         var timer;
 
-        function Afunction() {
-            sendData();
-            resetTimer();
-
-        }
-        
-
-
-            function sendData() {
-
-                var h = Math.floor(seconds / 3600).toString().padStart(2, '0');
-                var m = Math.floor((seconds % 3600) / 60).toString().padStart(2, '0');
-                var s = (seconds % 60).toString().padStart(2, '0');
-
-                $.ajax({
-                    type: "POST",
-                    url: "validacao.aspx/SaveTime",
-                    data: JSON.stringify({ hours: h, minutes: m, seconds: s }),
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    success: function (response) {
-                        console.log("Time sent successfully!");
-                    },
-                    error: function (xhr, status, error) {
-                        console.log("Error sending time.");
-                        console.log("Status:", status);
-                        console.log("Error:", error);
-                        console.log("Response Text:", xhr.responseText);
-                    }
-                });
-            }
-
         function formatTime(seconds) {
             var h = Math.floor(seconds / 3600).toString().padStart(2, '0');
             var m = Math.floor((seconds % 3600) / 60).toString().padStart(2, '0');
             var s = (seconds % 60).toString().padStart(2, '0');
-            return h + ':' + m + ':' + s;  
+            return h + ':' + m + ':' + s;
+
+
+            var hhh = s.toLocaleString();
+
+            $.ajax({
+                type: "POST",
+                url: "Pagina.aspx/SaveTime",
+                data: JSON.stringify({ hours: h, minutes: m, seconds: s }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    console.log("Time sent successfully!");
+                },
+                error: function (xhr, status, error) {
+                    console.log("Error sending time.");
+                    console.log("Status:", status);
+                    console.log("Error:", error);
+                    console.log("Response Text:", xhr.responseText);
+                }
+            });
+         
+
+
+
+
+
 
         }
 
         function updateTimer() {
             document.getElementById('timerDisplay').innerText = formatTime(seconds);
-            document.getElementById('cronometro').innerText = formatTime(seconds);
+         
             seconds++;
         }
 
@@ -85,8 +103,7 @@
             }
             document.getElementById('start').style.display = 'none';
             document.getElementById('stop').style.display = 'inline';
-            document.getElementById('start1').style.display = 'none';
-            document.getElementById('stop1').style.display = 'inline';
+          
         }
 
         function stopTimer() {
@@ -95,9 +112,9 @@
                 timer = null;
                 document.getElementById('start').style.display = 'inline';
                 document.getElementById('stop').style.display = 'none';
-                document.getElementById('start1').style.display = 'inline';
-                document.getElementById('stop1').style.display = 'none';
+               
 
+                
             }
         }
 
@@ -105,22 +122,13 @@
             stopTimer();
             seconds = 0;
             document.getElementById('timerDisplay').innerText = '00:00:00';
-            document.getElementById('cronometro').innerText = '00:00:00';
-                      
+          
         }
-
-        
     </script>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form2" runat="server">
-          <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-        
- 
-           
-        
+    <form id="form1" runat="server">
+          
         <div class="container-fluid">
             <div class="row">
                 <!-- Navbar Vertical -->
@@ -133,18 +141,17 @@
                          
        
         <button id="start" type="button" onclick="startTimer()"><img src="Imagens/Ativo 20.png" /></button>
-         <button id="stop"   type="button" style="display: none;" onclick="stopTimer()" ><img src="Imagens/Ativo 19.png" /></button>
-                                   
- 
-                                     
+         <button id="stop" type="button" style="display: none;" onclick="stopTimer()"><img src="Imagens/Ativo 19.png" /></button>
+      
+
                                 </a>
                             
                                    
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link active" href="#">
-                                    <button type="button" onclick="Afunction()"><img src="Imagens/stop.png" /></button>
-                                   
+                                    <button type="button" onclick="resetTimer()"><img src="Imagens/stop.png" /></button>
+
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -224,15 +231,12 @@
                 
   <main role="main" class="col-md-11 ml-sm-auto  col-lg-11 px-md-0 ">
 
+      <asp:Label ID="Label1" runat="server" Text="Label" Font-Size="Larger" ForeColor="White"></asp:Label>
+       <asp:Label ID="Label2" runat="server" Text="Label" Font-Size="Larger" ForeColor="White"></asp:Label>
+       <asp:Button ID="Button1" runat="server" Text="Submit" OnClientClick="somefunction(); return false; " />
+      <asp:Button ID="Button2" runat="server" Text="Stop" OnClientClick="Afunction(); return false; " />
+      <asp:Button ID="Button3" runat="server" Text="Nova" OnClientClick="sendData(); return false; " />
       <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
-
-      </main>
-           
-                 </div>
-             </div>
     </form>
 </body>
 </html>
