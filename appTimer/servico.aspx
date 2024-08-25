@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Baseapp.Master" AutoEventWireup="true" CodeBehind="servico.aspx.cs" Inherits="appTimer.servico" %>
+﻿ <%@ Page Title="" Language="C#" MasterPageFile="~/Baseapp.Master" AutoEventWireup="true" CodeBehind="servico.aspx.cs" Inherits="appTimer.servico" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -50,9 +50,10 @@
         
         <div class="col-12">
             <div class="centro">
-                <h5 class="h5">
-                    <asp:Label ID="lbl_nome" runat="server" Text="Label"></asp:Label></h5>
+                <h2 class="h2">
+                    <asp:Label ID="lbl_nome" runat="server" Text=""></asp:Label></h2>
                 <br />
+
 
                 <h3 class="h3">ESCOLHA O TRABALHO</h3>
             </div>
@@ -88,7 +89,7 @@
                 <div class="col-md-12">
                     <div class="card-body" >
                          <div class="center">
-                         <h5>   <asp:LinkButton ID="Lb_InicioRapido" runat="server" ForeColor="White">Criar um novo Trabalho</asp:LinkButton></h5>
+                         <h5>   <asp:LinkButton ID="Lb_CriarTrablaho" OnClick="Lb_CriarTrablaho_Click" runat="server" ForeColor="White">Criar um novo Trabalho</asp:LinkButton></h5>
                         
                     </div>
                 </div>
@@ -96,7 +97,7 @@
             </div>
         </div>
 
-
+        <asp:Xml ID="Xml1" runat="server" ValidateRequestMode="Disabled" TransformSource="~/formata Servico.xslt"></asp:Xml>
 
                  
         <asp:Repeater ID="rtp_servico" runat="server" DataSourceID="SqlDataSource1" OnItemDataBound="rtp_servico_ItemDataBound">
@@ -153,4 +154,4 @@
                
     </main>
 
-</asp:Content>
+ </asp:Content>

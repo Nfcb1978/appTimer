@@ -8,6 +8,7 @@ using System.Web.Services;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
+using System.Web.Script.Serialization;
 
 
 namespace appTimer
@@ -18,11 +19,42 @@ namespace appTimer
         public static string Hours { get; set; }
         public static string Minutes { get; set; }
         public static string Seconds { get; set; }
+        public string horas;
+        public string minutos;
+        public string segundos;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-       
-        }
+            if (Session["utilizador"] == null)
+            {
+                Response.Redirect("login.aspx");
+            }
+            //Se não escolher cliente
+            if  ((Session["cliente"] == null) &&(Session["nome"] == null))
+            {
+                Response.Redirect("tarefa.aspx");
 
+            }//Vem da pagina tarefa
+            else if (Session["cliente"] != null)
+            {
+               lbl_nome.Text = Session["cliente"].ToString();
+            }
+            else if (Session["nome"] != null)
+            {
+                lbl_nome.Text = Session["nome"].ToString();
+            }
+
+
+
+
+
+
+            //Recebe o nome da Tarefa
+            lbl_tarefa.Text = Convert.ToString(Request.QueryString["nome"]);
+           
+
+        }
+        
         [WebMethod]
 
         public static object SaveTime(string hours, string minutes, string seconds)
@@ -45,20 +77,49 @@ namespace appTimer
 
 
         private static void SaveToDatabase(string hours, string minutes, string seconds)
+
         {
-            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["TimerConnectionString"].ConnectionString);//estabilecer conexão
+            //Impedir que entrem para a base de dados tempos a "Zero"
+            if ((int.Parse(hours) > 0) || (int.Parse(minutes) > 0) | (int.Parse(seconds) > 0))
+            {
+                SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["TimerConnectionString"].ConnectionString);//estabilecer conexão
 
-            SqlCommand myCommando = new SqlCommand();//linha de comandos
-            myCommando.CommandType = CommandType.StoredProcedure; //vamos usar uma store procedure
-            myCommando.CommandText = "inserir_Tempo"; //cujo nome é... 
-            myCommando.Connection = myConn; //conexão a usar
-            myCommando.Parameters.AddWithValue("@Horas", hours);
-            myCommando.Parameters.AddWithValue("@Minutos", minutes);
-            myCommando.Parameters.AddWithValue("@Segundos", seconds);
+                SqlCommand myCommando = new SqlCommand();//linha de comandos
+                myCommando.CommandType = CommandType.StoredProcedure; //vamos usar uma store procedure
+                myCommando.CommandText = "inserir_Tempo"; //cujo nome é... 
+                myCommando.Connection = myConn; //conexão a usar
+                myCommando.Parameters.AddWithValue("@Horas", hours);
+                myCommando.Parameters.AddWithValue("@Minutos", minutes);
+                myCommando.Parameters.AddWithValue("@Segundos", seconds);
+                myCommando.Parameters.AddWithValue("@RecordDate", DateTime.Today);
 
+                myConn.Open();
+                myCommando.ExecuteNonQuery();//Execução Procedure sem devolução de dados executa, mas não devolve nada
+                myConn.Close();
+            }
+        }
+                
+        [WebMethod]
+        public static object GetTime()
+        {
+            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["TimerConnectionString"].ConnectionString);
+            //string query = "SELECT SUM(Horas) AS TotalHoras, SUM(Minutos) as TotalMinutos, SUM(Segundos) as TotalSegundos FROM Tempos WHERE CONVERT(DATE, Data) = CONVERT(DATE, GETDATE())";
+            string query = "SELECT ISNULL(SUM(Horas), 0) AS TotalHoras, ISNULL(SUM(Minutos), 0) as TotalMinutos, ISNULL(SUM(Segundos), 0) as TotalSegundos FROM Tempos WHERE CONVERT(DATE, Data) = CONVERT(DATE, GETDATE())";
+            SqlCommand myCommando = new SqlCommand(query, myConn);
             myConn.Open();
-            myCommando.ExecuteNonQuery();//Execução Procedure sem devolução de dados executa, mas não devolve nada
+            SqlDataReader dr = myCommando.ExecuteReader();
+
+            int horas = 0, minutos = 0, segundos = 0;
+
+            while (dr.Read())
+            {
+                horas = Convert.ToInt32(dr["TotalHoras"]);
+                minutos = Convert.ToInt32(dr["TotalMinutos"]);
+                segundos = Convert.ToInt32(dr["TotalSegundos"]);
+            }
             myConn.Close();
+
+            return new { Horas = horas, Minutos = minutos, Segundos = segundos };
         }
 
     }

@@ -57,9 +57,17 @@
         
         <div class="col-12">
             <div class="centro">
-                <h5 class="h5">Minho Brinde</h5>
-                <br />
-
+               <h3 class="h3">
+                    <asp:Label ID="lbl_nome" runat="server" Text="Label"></asp:Label>
+                <asp:DropDownList ID="ddl_nome" AppendDataBoundItems="True" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="nome" DataValueField="nome" ForeColor="White" Font-Bold="True" BackColor="#333333" OnSelectedIndexChanged="ddl_nome_SelectedIndexChanged"></asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TimerConnectionString %>" SelectCommand="SELECT [nome] FROM [Clientes]"></asp:SqlDataSource>
+               
+                   </h3>
+                </div>
+            </div>
+         <br />
+         <div class="col-12">
+            <div class="centro">
                 <h3 class="h3">ESCOLHA a TAREFA</h3>
             </div>
         </div>
@@ -79,7 +87,7 @@
                
                     <div class="card-body" >
                          <div class="center">
-                         <h5>   <asp:LinkButton ID="LinkButton3" runat="server" ForeColor="White">Criar nova Tarefa</asp:LinkButton></h5>
+                         <h5>   <asp:LinkButton ID="Criar_Tarefa" OnClick="Criar_Tarefa_Click" runat="server" ForeColor="White">Criar nova Tarefa</asp:LinkButton></h5>
                         
                     </div>
                 </div>
@@ -106,39 +114,8 @@
         </div>
                          </div>          
          </div> 
-   
-     <div class="card mb-3" style=" background-color:#333 ">
-             <div class="row g-0">
-               <div class="col-md-12">
-                    <div class="card-body">
-                        
-                            <asp:LinkButton  ID="Lb_asistTecnica" runat="server" ForeColor="White">Assistência Tecnica</asp:LinkButton>
-                       
-                    </div>
-                    </div>
-               
-           </div>
-                
-            </div>
-       
-
+        <asp:Xml ID="Xml1" runat="server" TransformSource="~/formataTarefa.xslt"></asp:Xml>
      
-         <div class="card mb-3" style=" background-color:#333 ">
-              
-            <div class="row g-0">
-               <div class="col-md-12">
-                    <div class="card-body">
-                       
-                            <asp:LinkButton CssClass="custom-linkbutton" ID="Lb_Instalacao" runat="server" ForeColor="White">Instalação</asp:LinkButton>
-                       
-                  
-                          </div>
-                    
-               
-                    </div>
-                
-            </div>
-        </div>
        
                
     </main>

@@ -42,6 +42,15 @@ namespace appTimer
         protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
+        /// btn_sair control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton btn_sair;
+
+        /// <summary>
         /// ContentPlaceHolder1 control.
         /// </summary>
         /// <remarks>

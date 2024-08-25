@@ -29,20 +29,18 @@
         .corpo {
             background-color: darkgray;
         }
-       
-        
+      
           
         .card-body{
            
-            background-color:#333;
-           
-
+            background-color:#333;              
         }
          .card-body:hover{
            
             background-color:darkslategray;
 
         }
+        
 
     </style>
    
@@ -58,19 +56,23 @@
         </div>
        
 
-
+     
          <div class="card mb-3" style=" background-color:#333 ">
             <div class="row g-0">
                 <div class="col-md-12">
                     <div class="left">
                        
-                          <div class="input-group mx-sm-3 mb-2" >
+                          <div  class="input-group mx-sm-3 mb-2" style="height: 20px;" >
 
-                <input type="search" style=" color:white; background-color:darkslategray " class="form-control" placeholder="Procura um projecto..." >
               
-                              <div class="input-group-append">
-                    <span class="input-group-text"><i class="fas fa-search" style="color:darkslategray"></i></span>
-                </div>
+              
+                            <input type="text" id="tb_pesquisa" runat="server" style=" color:white; background-color:darkslategray " class="form-control" placeholder="Procura um projecto. Escreva «todos» para lista completa!" aria-label="Pesquisa" aria-describedby="button-pesquisa">
+                              <asp:ImageButton ID="Bt_pesquisa" OnClick="Bt_pesquisa_Click" ImageUrl="~/Imagens/OIP1.jpg" runat="server" />
+			
+                              
+                             
+
+                              
             </div>
 
                     </div>
@@ -81,13 +83,42 @@
 
        </div>
 
+         <asp:Repeater ID="rtp_pesquisa" runat="server" DataSourceID="SqlDataSource1" OnItemDataBound="rtp_pesquisa_ItemDataBound">
+
+                                  <ItemTemplate>
+
+
+
+        <div class="card mb-3" style=" background-color:#333 ">
+             <div class="row g-0">
+               <div class="col-md-12">
+                    <div class="card-body">
+         
+                
+    <asp:Label ID="lbl_projecto" runat="server" Text="" CssClass="center" Font-Bold="True" Font-Size="Large"></asp:Label>
+      
+                      
+                   
+                        </div>
+                    </div>
+               
+           </div>
+            </div>
+
+    </ItemTemplate>
+
+
+                              </asp:Repeater>
+
+                              <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TimerConnectionString %>" SelectCommand="SELECT [nome], [Nencomenda], [Comentário], [id] FROM [assistencias]"></asp:SqlDataSource>
+
          <div class="card mb-3" style=" background-color:#333 ">
             <div class="row g-0">
                
                 <div class="col-md-12" ">
                     <div class="card-body" >
                          <div class="center">
-                         <h5>   <asp:LinkButton ID="Lb_InicioRapido" runat="server" ForeColor="White">Adicionar um novo Cliente</asp:LinkButton></h5>
+                         <h5>   <asp:LinkButton ID="Lb_InicioRapido" runat="server" OnClick="Lb_InicioRapido_Click" ForeColor="White">Adicionar um novo Cliente</asp:LinkButton></h5>
                         
                     </div>
                 </div>
@@ -101,9 +132,12 @@
                      
                        
 
-
+       
 
                        
-             </main>         
+             </main> 
+     <div>
         <asp:Xml ID="Xml1" runat="server" TransformSource="~/formataCliente.xslt"></asp:Xml>
+</div>
+    <br />
 </asp:Content>

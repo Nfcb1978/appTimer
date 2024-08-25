@@ -87,6 +87,8 @@
         
     </style>
      
+
+
      <div class ="container">
       <main role="main"  class="col-md-12 ml-sm-auto  col-lg-12 px-m-0 ms-0">
    
@@ -108,10 +110,10 @@
                <div class="col-md-12">
                     <div class="card-body">
         
-                
+                 <h5 class="h5">
+                    <asp:Label ID="lbl_nome" runat="server" Text="Label"></asp:Label></h5>
     
-      
-                      
+                          
                    
                         </div>
                     </div>
@@ -124,7 +126,8 @@
                     <div class="card-body">
         
                 
-    <asp:Label ID="lbl_servico" runat="server" Text="" CssClass="center" Font-Bold="True" Font-Size="Large"></asp:Label>
+       <h5 class="h5">
+                    <asp:Label ID="lbl_tarefa" runat="server" Text="Label"></asp:Label></h5>
       
                       
                    
@@ -242,11 +245,13 @@
         <asp:Button ID="btn_iniciar" CssClass="btn-primary w-100" runat="server" Text="INICIAR TRABALHO" />
       
        </div>
-        
-
+   
+    
     <script>
 
-
+       
+       
+        
         function setupCanvas(canvasId) {
             const canvas = document.getElementById(canvasId);
             const ctx = canvas.getContext('2d');
@@ -292,5 +297,5 @@
         setupCanvas('signature2');
     </script>
 
-
+   
 </asp:Content>

@@ -82,8 +82,10 @@
   <ItemGroup>
     <Content Include="adicionarCliente.aspx" />
     <Content Include="adicionarservico.aspx" />
-    <Content Include="appWelcome.aspx" />
+    <Content Include="index.aspx" />
+    <Content Include="formata Servico.xslt" />
     <Content Include="formataCliente.xslt" />
+    <Content Include="formataTarefa.xslt" />
     <Content Include="Imagens\Ativo 1.png" />
     <Content Include="Imagens\Ativo 16.png" />
     <Content Include="Imagens\Ativo 17.png" />
@@ -105,8 +107,7 @@
     <Content Include="Imagens\Ativo 8.png" />
     <Content Include="Imagens\OIP.jpg" />
     <Content Include="Imagens\stop.png" />
-    <Content Include="Page.aspx" />
-    <Content Include="Pagina.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="servico.aspx" />
     <Content Include="tarefa.aspx" />
     <Content Include="validacao.aspx" />
@@ -129,12 +130,12 @@
     <Compile Include="adicionarservico.aspx.designer.cs">
       <DependentUpon>adicionarservico.aspx</DependentUpon>
     </Compile>
-    <Compile Include="appWelcome.aspx.cs">
-      <DependentUpon>appWelcome.aspx</DependentUpon>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="appWelcome.aspx.designer.cs">
-      <DependentUpon>appWelcome.aspx</DependentUpon>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Base2.Master.cs">
       <DependentUpon>Base2.Master</DependentUpon>
@@ -150,19 +151,12 @@
     <Compile Include="Baseapp.Master.designer.cs">
       <DependentUpon>Baseapp.Master</DependentUpon>
     </Compile>
-    <Compile Include="Page.aspx.cs">
-      <DependentUpon>Page.aspx</DependentUpon>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Page.aspx.designer.cs">
-      <DependentUpon>Page.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pagina.aspx.cs">
-      <DependentUpon>Pagina.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pagina.aspx.designer.cs">
-      <DependentUpon>Pagina.aspx</DependentUpon>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="servico.aspx.cs">

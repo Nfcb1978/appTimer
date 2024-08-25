@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Baseapp.Master" AutoEventWireup="true" CodeBehind="adicionarservico.aspx.cs" Inherits="appTimer.adicionarservico" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Baseapp.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="appTimer.Login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         /* Estilo personalizado para centralizar a imagem verticalmente */
@@ -53,7 +53,7 @@
                 <h5 class="h5">Seja Bem-Vindo</h5>
                 <br />
 
-                <h3 class="h3">Insira o Serviço:</h3>
+                <h3 class="h3">Faça o Login:</h3>
             </div>
         </div>
        
@@ -61,14 +61,22 @@
 
          
  <div class="form-group">
-               <label for="Servico"><b>Serviço:</b></label>
-            <asp:TextBox ID="tbServico" runat="server" placeholder="Insira o seu nome do Serviço" CssClass="form-control" required Font-Bold="True"></asp:TextBox>
+               <label for="nome"><b>E-mail:</b></label>
+            <asp:TextBox ID="tb_utilizador" runat="server" placeholder="Coloque o seu e-mail" CssClass="form-control" required Font-Bold="True"></asp:TextBox>
                </div>
 
-        
+        <div class="form-group">
+               <label for="Servico"><b>Password:</b></label>
+            <asp:TextBox ID="Tb_PW" runat="server" placeholder="Coloque a sua password" CssClass="form-control" required Font-Bold="True"></asp:TextBox>
+               </div>
        
-        <asp:Button ID="Btn_Inserir" OnClick="Btn_Inserir_Click" runat="server" Text="Inserir" Font-Bold="True" />
-                         
+        <asp:Button ID="Btn_Entrar" OnClick="Btn_Entrar_Click" runat="server" Text="Entrar" Font-Bold="True" />
+              <br /> 
+        <div >
+              
+            <asp:Label ID="lbl_mensagem"  runat="server" Text="" BackColor="Black" Font-Bold="True" ForeColor="White"></asp:Label>
+           
+               </div>
    
           </main>           
 

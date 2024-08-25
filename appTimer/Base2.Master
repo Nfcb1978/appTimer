@@ -41,43 +41,88 @@
         
 
 
-            function sendData() {
+        function sendData() {
 
-                var h = Math.floor(seconds / 3600).toString().padStart(2, '0');
-                var m = Math.floor((seconds % 3600) / 60).toString().padStart(2, '0');
-                var s = (seconds % 60).toString().padStart(2, '0');
+            var h = Math.floor(seconds / 3600).toString().padStart(2, '0');
+            var m = Math.floor((seconds % 3600) / 60).toString().padStart(2, '0');
+            var s = (seconds % 60).toString().padStart(2, '0');
 
-                $.ajax({
-                    type: "POST",
-                    url: "validacao.aspx/SaveTime",
-                    data: JSON.stringify({ hours: h, minutes: m, seconds: s }),
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    success: function (response) {
-                        console.log("Time sent successfully!");
-                    },
-                    error: function (xhr, status, error) {
-                        console.log("Error sending time.");
-                        console.log("Status:", status);
-                        console.log("Error:", error);
-                        console.log("Response Text:", xhr.responseText);
-                    }
-                });
-            }
+            $.ajax({
+                type: "POST",
+                url: "validacao.aspx/SaveTime",
+                data: JSON.stringify({ hours: h, minutes: m, seconds: s }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    console.log("Time sent successfully!");
+                },
+                error: function (xhr, status, error) {
+                    console.log("Error sending time.");
+                    console.log("Status:", status);
+                    console.log("Error:", error);
+                    console.log("Response Text:", xhr.responseText);
+                }
+            });
+        }
+
+
 
         function formatTime(seconds) {
             var h = Math.floor(seconds / 3600).toString().padStart(2, '0');
             var m = Math.floor((seconds % 3600) / 60).toString().padStart(2, '0');
             var s = (seconds % 60).toString().padStart(2, '0');
-            return h + ':' + m + ':' + s;  
-
+            return h + ':' + m + ':' + s;
         }
 
+        
+          
+
+       
+        function getUpdatedTime(callback) {
+            $.ajax({
+                type: "POST",
+                url: "validacao.aspx/GetTime",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    var data = response.d;
+                    callback(data.Horas, data.Minutos, data.Segundos);
+                },
+                error: function (xhr, status, error) {
+                    console.error("Erro ao obter os tempos atualizados:", error);
+                }
+            });
+        }
+
+      
+        
+
+        function totalTime(hh, mm, ss, seconds) {
+            var sss = parseInt(hh) * 3600 + parseInt(mm) * 60 + parseInt(ss) + seconds;
+
+            var hor = Math.floor(sss / 3600);
+            var min = Math.floor((sss % 3600) / 60);
+            var seg = sss % 60;
+
+            var h = hor.toString().padStart(2, '0');
+            var m = min.toString().padStart(2, '0');
+            var s = seg.toString().padStart(2, '0');
+
+            return h + ':' + m + ':' + s;
+        }
+
+        // Função para atualizar o timer no elemento
         function updateTimer() {
             document.getElementById('timerDisplay').innerText = formatTime(seconds);
             document.getElementById('cronometro').innerText = formatTime(seconds);
-            seconds++;
+          getUpdatedTime(function (hh, mm, ss) {
+                var result = totalTime(hh, mm, ss, seconds);
+              document.getElementById('total').innerText = "Total Hoje: " + result;
+                seconds++;
+            });
         }
+
+      
 
         function startTimer() {
             if (!timer) {
@@ -128,13 +173,22 @@
                 <nav class="col-md-1 col-lg-1 d-md-block bg-dark sidebar ">
                     <div class="sidebar-sticky">
                         <ul class="nav flex-column">
+
+                             <li class="nav-item">
+                                <a class="nav-link active" href="index.aspx">
+                                  <img src="Imagens/Ativo 16.png" />
+
+                                </a>
+                            </li>
+
+
                             <li class="nav-item">
                                 <a class="nav-link active" href="#">
                          
        
         <button id="start" type="button" onclick="startTimer()"><img src="Imagens/Ativo 20.png" /></button>
          <button id="stop"   type="button" style="display: none;" onclick="stopTimer()" ><img src="Imagens/Ativo 19.png" /></button>
-                                   
+                                 
  
                                      
                                 </a>
@@ -149,7 +203,7 @@
                             </li>
                             <li class="nav-item">
                               <div id="timerDisplay">00:00:00</div>
-
+                              
                             </li>
 
                             <li class="nav-item">
@@ -162,25 +216,20 @@
                                     <img src="Imagens/Ativo 1.png" /></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="appWelcome.aspx">
                                     <img src="Imagens/Ativo 2.png" /></a>
                             </li>
-                            <li class="nav-item">
-                                <p>
-                                    <br />
-
-                                </p>
-                            </li>
+                            
                             <li class="nav-item">
                                 <a class="nav-link" href="#">
                                     <img src="Imagens/Ativo 3.png" /></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="tarefa.aspx">
                                     <img src="Imagens/Ativo 4.png" /></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="servico.aspx">
                                     <img src="Imagens/Ativo 5.png" /></a>
                             </li>
                             <li class="nav-item">
@@ -189,7 +238,7 @@
 
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="Cliente.aspx">
                                     <img src="Imagens/Ativo 6.png" /></a>
                             </li>
                             <li class="nav-item">
@@ -198,7 +247,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">
-                                    <img src="Imagens/Ativo 8.png" /></a>
+                                     <asp:ImageButton ID="btn_sair" OnClick="btn_sair_Click" ImageUrl="~/Imagens/Ativo 8.png" runat="server" /></a>
                             </li>
                             <li class="nav-item">
                                 <p>

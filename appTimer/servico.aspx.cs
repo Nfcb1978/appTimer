@@ -18,24 +18,43 @@ namespace appTimer
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+     if (Session["utilizador"] == null)
+            {
+               Response.Redirect("login.aspx");
+            }
+            if (Request.QueryString["nome"] == null)
+            {
+                Response.Redirect("cliente.aspx");
+            }
+
+
             lbl_nome.Text= Convert.ToString(Request.QueryString["nome"]);
+            
 
+           
 
+            Session["nome"] = lbl_nome.Text;
+            //Ir buscar dados Base de dados
+            string query = "select nome from Tarefas";
+            //Copia a connectio á BD e comand não copia procedure
+            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["TimerConnectionString"].ConnectionString);//estabilecer conexão
+
+            SqlCommand myCommando = new SqlCommand(query, myConn);//vou correr a minha query utilizando o Myconn
+            SqlDataAdapter myAdapter = new SqlDataAdapter(myCommando);
+            DataSet myDataSet = new DataSet();
+            myAdapter.Fill(myDataSet);
+
+            Xml1.DocumentContent = myDataSet.GetXml(); //despejar conteudo do select 
         }
 
         protected void rtp_servico_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)//se o e for um item
-            {//preencho os dados se o e for um item.
-                DataRowView dr = (DataRowView)/*cast para datarowview*/e.Item.DataItem;//apanhar os dados da linha
-                /*Cast para label para assumir o .Text*/
+           
+        }
 
-                ((Label)e.Item.FindControl("lbl_servico")).Text = dr["nome"].ToString();
-
-
-
-
-            }
+        protected void Lb_CriarTrablaho_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("adicionarservico.aspx");
         }
     }
 }

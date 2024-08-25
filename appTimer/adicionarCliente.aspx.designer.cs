@@ -96,6 +96,15 @@ namespace appTimer
         protected global::System.Web.UI.WebControls.TextBox tb_telemovel;
 
         /// <summary>
+        /// tb_nif control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_nif;
+
+        /// <summary>
         /// tb_telemovel2 control.
         /// </summary>
         /// <remarks>
@@ -121,15 +130,6 @@ namespace appTimer
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tb_telefone2;
-
-        /// <summary>
-        /// tb_nif control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_nif;
 
         /// <summary>
         /// Btn_Inserir control.

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Baseapp.Master" AutoEventWireup="true" CodeBehind="appWelcome.aspx.cs" Inherits="appTimer.appWelcome" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Baseapp.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="appTimer.appWelcome" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -77,7 +77,7 @@
                 <div class="col-md-6">
                     <div class="card-body">
                         <h5 class="card-title">
-                            <asp:LinkButton ID="Lb_TarefaHabit" runat="server" ForeColor="White">Tarefa Habitual</asp:LinkButton></h5>
+                            <asp:LinkButton ID="Lb_TarefaHabit" OnClick="Lb_TarefaHabit_Click" runat="server" ForeColor="White">Tarefa Habitual</asp:LinkButton></h5>
                         <p class="card-text">Inicie uma tarefa habitual ou única.</p>
                     </div>
                 </div>
@@ -98,7 +98,7 @@
                     <div class="left">
                         <div class="card-body">
                             <h5 class="card-title">
-                                <asp:LinkButton ID="Lb_iniciarTrabalho" runat="server" ForeColor="White">Iniciar Trabalho</asp:LinkButton>
+                                <asp:LinkButton ID="Lb_iniciarTrabalho" OnClick="Lb_iniciarTrabalho_Click" runat="server" ForeColor="White">Iniciar Trabalho</asp:LinkButton>
                             </h5>
                             <p class="card-text">Inicie um trabalho selecionando o cliente e a tarefa.</p>
                         </div>

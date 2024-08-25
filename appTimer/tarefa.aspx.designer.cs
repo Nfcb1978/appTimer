@@ -15,13 +15,40 @@ namespace appTimer
     {
 
         /// <summary>
-        /// LinkButton3 control.
+        /// lbl_nome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton3;
+        protected global::System.Web.UI.WebControls.Label lbl_nome;
+
+        /// <summary>
+        /// ddl_nome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_nome;
+
+        /// <summary>
+        /// SqlDataSource1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+
+        /// <summary>
+        /// Criar_Tarefa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton Criar_Tarefa;
 
         /// <summary>
         /// Lb_InicioRapido control.
@@ -33,21 +60,12 @@ namespace appTimer
         protected global::System.Web.UI.WebControls.LinkButton Lb_InicioRapido;
 
         /// <summary>
-        /// Lb_asistTecnica control.
+        /// Xml1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Lb_asistTecnica;
-
-        /// <summary>
-        /// Lb_Instalacao control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Lb_Instalacao;
+        protected global::System.Web.UI.WebControls.Xml Xml1;
     }
 }

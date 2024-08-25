@@ -16,7 +16,10 @@ namespace appTimer
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["utilizador"] == null)
+            {
+                Response.Redirect("login.aspx");
+            }
         }
 
         protected void Btn_Inserir_Click(object sender, EventArgs e)
@@ -46,7 +49,7 @@ namespace appTimer
             myCommando.ExecuteNonQuery();//Execução Procedure sem devolução de dados executa, mas não devolve nada
             myConn.Close();
 
-
+            Response.Redirect("Cliente.aspx");
 
         }
 
