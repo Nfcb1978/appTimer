@@ -69,7 +69,7 @@
                <label for="morada"><b>Morada:</b></label>
             <asp:TextBox ID="tb_morada" runat="server" placeholder="Insira a sua morada" CssClass="form-control"  Font-Bold="True"></asp:TextBox>
                </div>   
-     <!--   <div class="form-group">
+     <div class="form-group">
                <label for="morada"><b>Morada 2:</b></label>
             <asp:TextBox ID="tb_morada2" runat="server" placeholder="Insira a sua segunda morada" CssClass="form-control" Font-Bold="True"></asp:TextBox>
                </div>   
@@ -93,23 +93,23 @@
       <div class="form-group">
                <label for="latitude"><b>Latitude:</b></label>
             <asp:TextBox ID="tb_latitude" runat="server" placeholder="Insira a latitude da localização" CssClass="form-control"  Font-Bold="True"></asp:TextBox>
-               </div>  -->
+               </div>  
                    
                    <div class="form-group">
             <label for="email">Email:</label>
             <asp:TextBox ID="tbEmail" runat="server" placeholder="Insira o e-mail" CssClass="form-control"  TextMode="Email" Font-Bold="True"></asp:TextBox>
                    </div> 
         <div class="form-group">
-             <label for="telefone">Telemovel:</label>
+             <label for="telemovel">Telemovel:</label>
             <asp:TextBox ID="tb_telemovel" runat="server" placeholder="insira o seu telemóvel" CssClass="form-control"  TextMode="SingleLine" Font-Bold="True"></asp:TextBox>
               </div>  
         <div class="form-group">
             <label for="nif">NIF:</label>
             <asp:TextBox ID="tb_nif" runat="server" placeholder="Insira o seu nif" CssClass="form-control" TextMode="SingleLine" Font-Bold="True"></asp:TextBox>
             </div> 
-        <!--
+        
          <div class="form-group">
-             <label for="telefone2">Telemovel2:</label>
+             <label for="telemovel1">Telemovel2:</label>
             <asp:TextBox ID="tb_telemovel2" runat="server" placeholder="insira o segundo telemóvel" CssClass="form-control" TextMode="SingleLine" Font-Bold="True"></asp:TextBox>
               </div>              
             <div class="form-group">
@@ -120,7 +120,7 @@
              <label for="telefone2">Telefone:</label>
             <asp:TextBox ID="tb_telefone2" runat="server" placeholder="insira o segundo telefone" CssClass="form-control" TextMode="SingleLine" Font-Bold="True"></asp:TextBox>
               </div>               
-               -->    
+                
         
        
         <asp:Button ID="Btn_Inserir" OnClick="Btn_Inserir_Click" runat="server" Text="Inserir" Font-Bold="True" />

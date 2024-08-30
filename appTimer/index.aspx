@@ -44,6 +44,7 @@
             </div>
         </div>
         <div class="card mb-3" style=" background-color:darkslategray ">
+              <a href="Cliente.aspx" style="text-decoration: none; color: inherit;">
             <div class="row g-0">
                 <div class="col-md-1">
                     <div class="center">
@@ -64,10 +65,12 @@
                     </div>
                 </div>
             </div>
+                    </a>
         </div>
 
 
      <div class="card mb-3" style=" background-color:darkslategray ">
+       
             <div class="row g-0">
                 <div class="col-md-1">
                     <div class="center">
@@ -77,7 +80,7 @@
                 <div class="col-md-6">
                     <div class="card-body">
                         <h5 class="card-title">
-                            <asp:LinkButton ID="Lb_TarefaHabit" OnClick="Lb_TarefaHabit_Click" runat="server" ForeColor="White">Tarefa Habitual</asp:LinkButton></h5>
+                      <asp:LinkButton ID="Lb_TarefaHabit" OnClick="Lb_TarefaHabit_Click" runat="server" ForeColor="White">Tarefa Habitual</asp:LinkButton></h5>
                         <p class="card-text">Inicie uma tarefa habitual ou única.</p>
                     </div>
                 </div>
@@ -89,18 +92,21 @@
                     </div>
                 </div>
             </div>
+             
         </div>
 
 
        <div class="card mb-3" style=" background-color:darkslategray ">
+           <a href="Cliente.aspx" style="text-decoration: none; color: inherit;">
             <div class="row g-0">
                 <div class="col-md-6">
                     <div class="left">
-                        <div class="card-body">
+                        <div src="Cliente.aspx" class="card-body">
                             <h5 class="card-title">
                                 <asp:LinkButton ID="Lb_iniciarTrabalho" OnClick="Lb_iniciarTrabalho_Click" runat="server" ForeColor="White">Iniciar Trabalho</asp:LinkButton>
                             </h5>
                             <p class="card-text">Inicie um trabalho selecionando o cliente e a tarefa.</p>
+                       
                         </div>
                     </div>
                 </div>
@@ -111,6 +117,7 @@
                 </div>
             </div>
         </div>
+               </a>
 
        </div>
         

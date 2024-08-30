@@ -122,11 +122,11 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="validacao.aspx">
                                     <img src="Imagens/Ativo 1.png" /></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="index.aspx">
+                                <a class="nav-link" href="Cliente.aspx">
                                     <img src="Imagens/Ativo 2.png" /></a>
                             </li>
                             
@@ -148,7 +148,7 @@
 
 
                             <li class="nav-item">
-                                <a class="nav-link" href="Cliente.aspx">
+                                <a class="nav-link" href="perfil.aspx">
                                     <img src="Imagens/Ativo 6.png" /></a>
                             </li>
                             <li class="nav-item">
