@@ -48,10 +48,15 @@ namespace appTimer
             decimal min = Math.Floor((sss % 3600) / 60);
             decimal seg = sss % 60;
 
-           
+            //Garantir que numros apresentados tenham 2 digitos 
+            string formattedHor = ((int)hor).ToString("00");
+            string formattedMin = ((int)min).ToString("00");
+            string formattedSeg = ((int)seg).ToString("00");
 
 
-            lb_total.Text = (hor + ":" + min + ":" + seg);
+
+
+            lb_total.Text = (formattedHor + ":" + formattedMin + ":" + formattedSeg);
         }
 
         protected void btn_sair_Click(object sender, ImageClickEventArgs e)

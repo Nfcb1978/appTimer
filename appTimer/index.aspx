@@ -43,57 +43,7 @@
                 <h3 class="h3">ESCOLHA UMA OPÇÃO</h3>
             </div>
         </div>
-        <div class="card mb-3" style=" background-color:darkslategray ">
-              <a href="Cliente.aspx" style="text-decoration: none; color: inherit;">
-            <div class="row g-0">
-                <div class="col-md-1">
-                    <div class="center">
-                        <img src="Imagens/Ativo 17.png" class="img-fluid ml-auto">
-                    </div>
-                </div>
-                <div class="col-md-6" ">
-                    <div class="card-body" >
-                         <h5>   <asp:LinkButton ID="Lb_InicioRapido" runat="server" ForeColor="White">Inicio Rápido</asp:LinkButton></h5>
-                        <p class="card-text">Inicie rapidamente um trabalho.</p>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="card-body">
-                        <div class="center">
-                            <h2>></h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                    </a>
-        </div>
-
-
-     <div class="card mb-3" style=" background-color:darkslategray ">
        
-            <div class="row g-0">
-                <div class="col-md-1">
-                    <div class="center">
-                        <img src="Imagens/Ativo 18.png" class="img-fluid ml-auto">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                      <asp:LinkButton ID="Lb_TarefaHabit" OnClick="Lb_TarefaHabit_Click" runat="server" ForeColor="White">Tarefa Habitual</asp:LinkButton></h5>
-                        <p class="card-text">Inicie uma tarefa habitual ou única.</p>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="card-body">
-                        <div class="center">
-                            <h2>></h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-             
-        </div>
 
 
        <div class="card mb-3" style=" background-color:darkslategray ">
@@ -103,8 +53,7 @@
                     <div class="left">
                         <div src="Cliente.aspx" class="card-body">
                             <h5 class="card-title">
-                                <asp:LinkButton ID="Lb_iniciarTrabalho" OnClick="Lb_iniciarTrabalho_Click" runat="server" ForeColor="White">Iniciar Trabalho</asp:LinkButton>
-                            </h5>
+                                Iniciar Trabalho </h5>
                             <p class="card-text">Inicie um trabalho selecionando o cliente e a tarefa.</p>
                        
                         </div>
@@ -123,12 +72,12 @@
         
 
       <div class="card mb-3" style=" background-color:darkslategray ">
+             <a href="Produtos.aspx" style="text-decoration: none; color: inherit;">
             <div class="row g-0">
                 <div class="col-md-6">
                     <div class="left">
                         <div class="card-body">
-                            <h5 class="card-title">
-                                <asp:LinkButton ID="Lb_EntregaMaterial" runat="server" ForeColor="White">Entrega de Material</asp:LinkButton>
+                            <h5 class="card-title">Entrega de Material
                             </h5>
                             <p class="card-text">Inicie uma deslocação para entrega de material.</p>
                         </div>
@@ -142,15 +91,16 @@
                 </div>
             </div>
         </div>
+                   </a>
           </div>
 
       <div class="card mb-3" style=" background-color:darkslategray ">
+           <a href="Trabalhos.aspx" style="text-decoration: none; color: inherit;">
             <div class="row g-0">
                 <div class="col-md-6">
                     <div class="left">
                         <div class="card-body">
-                            <h5 class="card-title">
-                                <asp:LinkButton ID="Lb_Consultar_Trbalhos" runat="server" ForeColor="White">Consultar Trabalhos</asp:LinkButton>
+                            <h5 class="card-title">Consultar Trabalhos</asp:LinkButton>
                             </h5>
                             <p class="card-text">Consulte todos os trabalhos realizados.</p>
                         </div>
@@ -163,16 +113,16 @@
                     </div>
                 </div>
             </div>
+                 </a>
            </div>
 
 <div class="card mb-3" style=" background-color:darkslategray ">
+      <a href="agenda.aspx" style="text-decoration: none; color: inherit;">
                 <div class="row g-0">
                     <div class="col-md-6">
                         <div class="left">
                             <div class="card-body">
-                                <h5 class="card-title">
-                                    <asp:LinkButton ID="LB_agendaVirtual" runat="server" ForeColor="White">Agenda Virtual</asp:LinkButton>
-                                </h5>
+                                <h5 class="card-title">Agenda Virtual</h5>
                                 <p class="card-text">Agende e organize o seu trabalho.</p>
                             </div>
                         </div>
@@ -184,7 +134,7 @@
                         </div>
                     </div>
                 </div>
-
+              </a>
             </div>
        
                
