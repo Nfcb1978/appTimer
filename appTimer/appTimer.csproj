@@ -83,14 +83,21 @@
     <Content Include="adicionarCliente.aspx" />
     <Content Include="adicionarservico.aspx" />
     <Content Include="agenda.aspx" />
+    <Content Include="detalheCliente.aspx" />
+    <Content Include="ExecutarTrabalho.aspx" />
+    <Content Include="Finalizar_Trabalho.aspx" />
     <Content Include="Imagens\cancel.png" />
     <Content Include="Imagens\confirmar.png" />
     <Content Include="Imagens\delete.png" />
     <Content Include="Imagens\edit.png" />
     <Content Include="index.aspx" />
     <Content Include="formata Servico.xslt" />
-    <Content Include="formataCliente.xslt" />
-    <Content Include="formataTarefa.xslt" />
+    <Content Include="formataCliente.xslt">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="formataTarefa.xslt">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Imagens\Ativo 1.png" />
     <Content Include="Imagens\Ativo 16.png" />
     <Content Include="Imagens\Ativo 17.png" />
@@ -118,7 +125,7 @@
     <Content Include="servico.aspx" />
     <Content Include="tarefa.aspx" />
     <Content Include="Trabalhos.aspx" />
-    <Content Include="validacao.aspx" />
+    <Content Include="Iniciar_Trabalho.aspx" />
     <Content Include="Web.config" />
     <Content Include="Cliente.aspx" />
     <Content Include=".aspx" />
@@ -144,6 +151,27 @@
     </Compile>
     <Compile Include="agenda.aspx.designer.cs">
       <DependentUpon>agenda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="detalheCliente.aspx.cs">
+      <DependentUpon>detalheCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="detalheCliente.aspx.designer.cs">
+      <DependentUpon>detalheCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExecutarTrabalho.aspx.cs">
+      <DependentUpon>ExecutarTrabalho.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExecutarTrabalho.aspx.designer.cs">
+      <DependentUpon>ExecutarTrabalho.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Finalizar_Trabalho.aspx.cs">
+      <DependentUpon>Finalizar_Trabalho.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Finalizar_Trabalho.aspx.designer.cs">
+      <DependentUpon>Finalizar_Trabalho.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
@@ -216,12 +244,12 @@
     <Compile Include="Trabalhos.aspx.designer.cs">
       <DependentUpon>Trabalhos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="validacao.aspx.cs">
-      <DependentUpon>validacao.aspx</DependentUpon>
+    <Compile Include="Iniciar_Trabalho.aspx.cs">
+      <DependentUpon>Iniciar_Trabalho.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="validacao.aspx.designer.cs">
-      <DependentUpon>validacao.aspx</DependentUpon>
+    <Compile Include="Iniciar_Trabalho.aspx.designer.cs">
+      <DependentUpon>Iniciar_Trabalho.aspx</DependentUpon>
     </Compile>
     <Compile Include=".aspx.cs">
       <DependentUpon>.aspx</DependentUpon>

@@ -73,16 +73,16 @@
            
   <div class="form-group">
                <label for="Contacto"><b>Contacto:</b></label>
-            <asp:TextBox ID="tb_Contacto" runat="server" placeholder="Insira o seu Código Postal" CssClass="form-control"  Font-Bold="True" Enabled="False"></asp:TextBox>
+            <asp:TextBox ID="tb_Contacto" runat="server" CssClass="form-control"  Font-Bold="True" Enabled="False"></asp:TextBox>
                </div> 
          <div class="form-group">
                <label for="´E-mail"><b>E-mail:</b></label>
-            <asp:TextBox ID="tb_email" runat="server" placeholder="Insira a sua freguesia" CssClass="form-control" Font-Bold="True" Enabled="False"></asp:TextBox>
+            <asp:TextBox ID="tb_email" runat="server" CssClass="form-control" Font-Bold="True" Enabled="False"></asp:TextBox>
                </div> 
         
      <div class="form-group">
                <label for="password"><b>Password:</b></label>
-            <asp:TextBox ID="tb_pw" runat="server" placeholder="Insira a longitude" CssClass="form-control"  Font-Bold="True" Enabled="False"></asp:TextBox>
+            <asp:TextBox ID="tb_pw" runat="server"  CssClass="form-control"  Font-Bold="True" Enabled="False"></asp:TextBox>
                </div>   
               
                 

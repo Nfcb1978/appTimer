@@ -4,25 +4,49 @@
 >
     <xsl:output method="xml" indent="yes"/>
 
-	<xsl:template match="/">
+	<!-- Parâmetros para controlar a página atual e o número de itens por página -->
+    <xsl:param name="page" select="1" />
+    <xsl:param name="itemsPerPage" select="5" />
+
+    <!-- Calcula o início e o fim da página -->
+    <xsl:variable name="start" select="($page - 1) * $itemsPerPage + 1" />
+    <xsl:variable name="end" select="$page * $itemsPerPage" />
+
+
+    <xsl:template match="/NewDataSet">
 	
 
-		<xsl:for-each select="NewDataSet/Table">
-		
-			
+		  <!-- Exibe apenas os itens que estão na página atual -->
+        <xsl:for-each select="Table[position() &gt;= $start and position() &lt;= $end]">
+
 
 
 			<div class="card mb-3" style=" background-color:#333 ;">
+			
 				<div class="row g-0">
 
 					<div class="col-md-12">
 						<div class="card-body" >
 							<div class="center">
 
-								<h5 >
+								<h5>
 									<a  href="https://localhost:44388/servico.aspx?nome={nome}"
 				   target ="_blank" style="color: white;">
+									<xsl:value-of select="numero_Cliente"/>
+									</a>&#160;&#160;
+								</h5>
+								<h5>
+									<a  href="https://localhost:44388/servico.aspx?nome={nome}"
+				   target ="_blank" style="color: white;">
+										
 										<xsl:value-of select="nome"/>
+									</a>&#160;&#160;&#160;&#160;
+								</h5>
+								<br/>
+								<h5 >
+									<a  href="https://localhost:44388/detalheCliente.aspx?id={numero_Cliente}"
+				   target ="_blank" style="color: white;">
+										 (Ver Detalhe)
 									</a>
 								</h5>
 								
@@ -33,5 +57,10 @@
 			</div>
 			
 		</xsl:for-each>
-	</xsl:template>
+	 
+          
+    </xsl:template>
+
+  
+
 </xsl:stylesheet>

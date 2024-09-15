@@ -24,7 +24,10 @@
         }
 
         body {
-            background-color: #333; /* Cor 
+            background-color: #333; /* Cor*/ 
+            margin: 0;
+    padding: 0;
+                }
 
 
     </style>
@@ -38,8 +41,12 @@
             resetTimer();
 
         }
-        
+        //Inicia o Timer e guarda assinatura
+        function Bfunction() {
+            startTimer();
+          saveSignature('signature');
 
+        }
 
         function sendData() {
 
@@ -49,7 +56,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "validacao.aspx/SaveTime",
+                url: "Iniciar_Trabalho.aspx/SaveTime",
                 data: JSON.stringify({ hours: h, minutes: m, seconds: s }),
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
@@ -81,7 +88,7 @@
         function getUpdatedTime(callback) {
             $.ajax({
                 type: "POST",
-                url: "validacao.aspx/GetTime",
+                url: "Iniciar_Trabalho.aspx/GetTime",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (response) {
@@ -130,8 +137,7 @@
             }
             document.getElementById('start').style.display = 'none';
             document.getElementById('stop').style.display = 'inline';
-            document.getElementById('start1').style.display = 'none';
-            document.getElementById('stop1').style.display = 'inline';
+          
         }
 
         function stopTimer() {
@@ -140,8 +146,7 @@
                 timer = null;
                 document.getElementById('start').style.display = 'inline';
                 document.getElementById('stop').style.display = 'none';
-                document.getElementById('start1').style.display = 'inline';
-                document.getElementById('stop1').style.display = 'none';
+              
 
             }
         }
@@ -207,16 +212,16 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="Iniciar_Trabalho.aspx">
                                     <br />
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="Cliente.aspx">
                                     <img src="Imagens/Ativo 1.png" /></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="appWelcome.aspx">
+                                <a class="nav-link" href="#">
                                     <img src="Imagens/Ativo 2.png" /></a>
                             </li>
                             

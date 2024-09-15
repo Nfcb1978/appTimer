@@ -33,13 +33,26 @@
           
         .card-body{
            
-            background-color:#333;              
+            background-color:#333;               
         }
          .card-body:hover{
            
             background-color:darkslategray;
 
         }
+          .mb-3 {
+           
+            background-color: aqua;
+            font-family: Tahoma;
+            
+            border: 5px solid blueviolet;
+            border-radius: 20px;
+
+
+        }
+
+       
+        
         
 
     </style>
@@ -57,7 +70,7 @@
        
 
      
-         <div class="card mb-3" style=" background-color:#333 ">
+         <div class="card mb-4" style=" background-color:#333 ">
             <div class="row g-0">
                 <div class="col-md-12">
                     <div class="left">
@@ -68,9 +81,8 @@
               
                             <input type="text" id="tb_pesquisa" runat="server" style=" color:white; background-color:darkslategray " class="form-control" placeholder="Procura um projecto. Escreva «todos» para lista completa!" aria-label="Pesquisa" aria-describedby="button-pesquisa">
                               <asp:ImageButton ID="Bt_pesquisa" OnClick="Bt_pesquisa_Click" ImageUrl="~/Imagens/OIP1.jpg" runat="server" />
-			
-                              
-                             
+			                            
+                          
 
                               
             </div>
@@ -112,7 +124,7 @@
 
                               <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TimerConnectionString %>" SelectCommand="SELECT [nome], [Nencomenda], [Comentário], [id] FROM [assistencias]"></asp:SqlDataSource>
 
-         <div class="card mb-3" style=" background-color:#333 ">
+         <div class="card mb-4" style=" background-color:#333 ">
             <div class="row g-0">
                
                 <div class="col-md-12" ">
@@ -139,5 +151,19 @@
      <div>
         <asp:Xml ID="Xml1" runat="server" TransformSource="~/formataCliente.xslt"></asp:Xml>
 </div>
+   
+     <!-- Botões de navegação para mudar de página -->
+          <div class="navegacao">
+                <asp:Button ID="btnPrevious" runat="server" Text="Anterior" OnClick="btnPrevious_Click" CssClass="btn-primary" />
+                <asp:Button ID="btnNext" runat="server" Text="Próxima" OnClick="btnNext_Click" CssClass="btn-primary" />
+               
+            </div>
+       <div class="navegacao">
+     <asp:Panel ID="paginationPanel" runat="server" ></asp:Panel>
+
+        </div>
     <br />
+  
+
+
 </asp:Content>
