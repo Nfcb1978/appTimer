@@ -47,9 +47,12 @@
             
             border: 5px solid blueviolet;
             border-radius: 20px;
-
-
-        }
+           }
+          .navegacao
+          {
+              margin-bottom: 10px;
+              
+          }
 
        
         
@@ -107,7 +110,7 @@
                     <div class="card-body">
          
                 
-    <asp:Label ID="lbl_projecto" runat="server" Text="" CssClass="center" Font-Bold="True" Font-Size="Large"></asp:Label>
+    <asp:Label ID="lbl_cliente" runat="server" Text="" CssClass="center" Font-Bold="True" Font-Size="Large"></asp:Label>
       
                       
                    
@@ -122,16 +125,15 @@
 
                               </asp:Repeater>
 
-                              <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TimerConnectionString %>" SelectCommand="SELECT [nome], [Nencomenda], [Comentário], [id] FROM [assistencias]"></asp:SqlDataSource>
+                              <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TimerConnectionString %>" SelectCommand="SELECT * FROM [Clientes]"></asp:SqlDataSource>
 
          <div class="card mb-4" style=" background-color:#333 ">
             <div class="row g-0">
                
                 <div class="col-md-12" ">
                     <div class="card-body" >
-                         <div class="center">
-                         <h5>   <asp:LinkButton ID="Lb_InicioRapido" runat="server" OnClick="Lb_InicioRapido_Click" ForeColor="White">Adicionar um novo Cliente</asp:LinkButton></h5>
-                        
+                         <div class="center">                        
+                          <h5>   <asp:LinkButton ID="lb_Adicionar_Cliente" runat="server" OnClick="lb_Adicionar_Cliente_Click" ForeColor="White">Adicionar um novo Cliente</asp:LinkButton></h5>
                     </div>
                 </div>
                 </div>                
@@ -162,7 +164,7 @@
      <asp:Panel ID="paginationPanel" runat="server" ></asp:Panel>
 
         </div>
-    <br />
+  
   
 
 

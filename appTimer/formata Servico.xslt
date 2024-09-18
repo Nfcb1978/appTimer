@@ -18,7 +18,7 @@
 							<div class="center">
 
 								<h5 >
-									<a  href="https://localhost:44388/validacao.aspx?nome={nome}"
+									<a  href="https://localhost:44388/Iniciar_Trabalho.aspx?nome={nome}"
 				   target ="_blank" style="color: white;">
 										<xsl:value-of select="nome"/>
 									</a>

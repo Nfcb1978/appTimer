@@ -138,10 +138,7 @@ namespace appTimer
         }
 
 
-        protected void Lb_InicioRapido_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("adicionarCliente.aspx");
-        }
+        
 
         protected void rtp_pesquisa_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
@@ -150,7 +147,7 @@ namespace appTimer
                 DataRowView dr = (DataRowView)/*cast para datarowview*/e.Item.DataItem;//apanhar os dados da linha
                 /*Cast para label para assumir o .Text*/
                               
-                ((Label)e.Item.FindControl("lbl_projecto")).Text = dr["nome"].ToString();
+                ((Label)e.Item.FindControl("lbl_cliente")).Text = dr["nome"].ToString();
                              
             }
 
@@ -165,20 +162,28 @@ namespace appTimer
         protected void Bt_pesquisa_Click(object sender, ImageClickEventArgs e)
         {
             String pesquisa = tb_pesquisa.Value;
-            if (pesquisa == "todos")
-            {
-                rtp_pesquisa.Visible = true;
-                Xml1.Visible = false;
-                Lb_InicioRapido.Visible = false;
+           
+            if  (pesquisa == "")
+                {
+                rtp_pesquisa.Visible = false;
+                
+                Xml1.Visible = true;
+                lb_Adicionar_Cliente.Visible = true;
+
             }
             else
             {
                 rtp_pesquisa.Visible = true;
-                SqlDataSource1.SelectCommand = $"Select * from assistencias where nome like '{pesquisa}%'";
+                SqlDataSource1.SelectCommand = $"Select * from Clientes where nome like '{pesquisa}%'";
                 Xml1.Visible = false;
-                Lb_InicioRapido.Visible = false;
+                lb_Adicionar_Cliente.Visible = false;
 
             }
+        }
+
+        protected void lb_Adicionar_Cliente_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("adicionarCliente.aspx");
         }
     }
 }

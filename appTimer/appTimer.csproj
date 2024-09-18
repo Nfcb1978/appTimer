@@ -82,6 +82,7 @@
   <ItemGroup>
     <Content Include="adicionarCliente.aspx" />
     <Content Include="adicionarservico.aspx" />
+    <Content Include="Adicionar_Produto .aspx" />
     <Content Include="agenda.aspx" />
     <Content Include="detalheCliente.aspx" />
     <Content Include="ExecutarTrabalho.aspx" />
@@ -89,7 +90,9 @@
     <Content Include="Imagens\cancel.png" />
     <Content Include="Imagens\confirmar.png" />
     <Content Include="Imagens\delete.png" />
+    <Content Include="Imagens\delete1.png" />
     <Content Include="Imagens\edit.png" />
+    <Content Include="Imagens\save-32.png" />
     <Content Include="index.aspx" />
     <Content Include="formata Servico.xslt" />
     <Content Include="formataCliente.xslt">
@@ -144,6 +147,13 @@
     </Compile>
     <Compile Include="adicionarservico.aspx.designer.cs">
       <DependentUpon>adicionarservico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Adicionar_Produto .aspx.cs">
+      <DependentUpon>Adicionar_Produto .aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Adicionar_Produto .aspx.designer.cs">
+      <DependentUpon>Adicionar_Produto .aspx</DependentUpon>
     </Compile>
     <Compile Include="agenda.aspx.cs">
       <DependentUpon>agenda.aspx</DependentUpon>

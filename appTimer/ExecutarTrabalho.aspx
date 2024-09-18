@@ -19,10 +19,8 @@
     #img {
       width: 60%;
       height: auto;/*  Mantém a proporção da imagem */
-    }
-        
+    }       
      
-
         
         body{
             color:white;
@@ -180,6 +178,23 @@
 
 
         </div>
+
+             <div class="card mb-3" style=" background-color:#333 ">
+             <div class="row g-0">
+               <div class="col-md-12">
+                    <div class="card-body">
+        
+                
+       <h3 class="h3">
+                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></h3>
+      
+                      
+                   
+                        </div>
+                    </div>
+               
+           </div>
+            </div>
     
 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
     <ContentTemplate>

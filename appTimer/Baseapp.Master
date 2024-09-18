@@ -28,8 +28,9 @@
             background-color: #333; /* Cor*/ 
             margin: 0;
     padding: 0;
+    color: white;
                 }
-
+     
     </style>
     <script type="text/javascript">
         var timer;
@@ -138,15 +139,15 @@
                             </li>
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="servico.aspx">
                                     <img src="Imagens/Ativo 3.png" /></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="tarefa.aspx">
+                                <a class="nav-link" href="Produtos.aspx">
                                     <img src="Imagens/Ativo 4.png" /></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="servico.aspx">
+                                <a class="nav-link" href="Trabalhos.aspx">
                                     <img src="Imagens/Ativo 5.png" /></a>
                             </li>
                             <li class="nav-item">

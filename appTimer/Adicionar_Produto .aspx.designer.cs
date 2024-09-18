@@ -11,34 +11,52 @@ namespace appTimer
 {
 
 
-    public partial class Produstos
+    public partial class Adicionar_Produto
     {
 
         /// <summary>
-        /// rtp_produtos control.
+        /// tbNome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rtp_produtos;
+        protected global::System.Web.UI.WebControls.TextBox tbNome;
 
         /// <summary>
-        /// SqlDataSource1 control.
+        /// tb_preco control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.TextBox tb_preco;
 
         /// <summary>
-        /// lb_Adicionar_Produto control.
+        /// tb_descricao control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lb_Adicionar_Produto;
+        protected global::System.Web.UI.WebControls.TextBox tb_descricao;
+
+        /// <summary>
+        /// FileUpload1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+
+        /// <summary>
+        /// Btn_Inserir control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Btn_Inserir;
     }
 }

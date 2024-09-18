@@ -27,6 +27,7 @@
             background-color: #333; /* Cor*/ 
             margin: 0;
     padding: 0;
+    color:white;
                 }
 
 
@@ -217,24 +218,24 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Cliente.aspx">
+                                <a class="nav-link" href="Iniciar_Trabalho.aspx">
                                     <img src="Imagens/Ativo 1.png" /></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="Cliente.aspx">
                                     <img src="Imagens/Ativo 2.png" /></a>
                             </li>
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="servico.aspx">
                                     <img src="Imagens/Ativo 3.png" /></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="tarefa.aspx">
+                                <a class="nav-link" href="Produtos.aspx">
                                     <img src="Imagens/Ativo 4.png" /></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="servico.aspx">
+                                <a class="nav-link" href="Trabalhos.aspx">
                                     <img src="Imagens/Ativo 5.png" /></a>
                             </li>
                             <li class="nav-item">
@@ -243,7 +244,7 @@
 
 
                             <li class="nav-item">
-                                <a class="nav-link" href="Cliente.aspx">
+                                <a class="nav-link" href="perfil.aspx">
                                     <img src="Imagens/Ativo 6.png" /></a>
                             </li>
                             <li class="nav-item">
