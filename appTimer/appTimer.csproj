@@ -98,9 +98,6 @@
     <Content Include="formataCliente.xslt">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="formataTarefa.xslt">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Imagens\Ativo 1.png" />
     <Content Include="Imagens\Ativo 16.png" />
     <Content Include="Imagens\Ativo 17.png" />
@@ -126,7 +123,6 @@
     <Content Include="perfil.aspx" />
     <Content Include="Produtos.aspx" />
     <Content Include="servico.aspx" />
-    <Content Include="tarefa.aspx" />
     <Content Include="Trabalhos.aspx" />
     <Content Include="Iniciar_Trabalho.aspx" />
     <Content Include="Web.config" />
@@ -232,13 +228,6 @@
     </Compile>
     <Compile Include="servico.aspx.designer.cs">
       <DependentUpon>servico.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="tarefa.aspx.cs">
-      <DependentUpon>tarefa.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="tarefa.aspx.designer.cs">
-      <DependentUpon>tarefa.aspx</DependentUpon>
     </Compile>
     <Compile Include="Cliente.aspx.cs">
       <DependentUpon>Cliente.aspx</DependentUpon>

@@ -30,7 +30,8 @@ namespace appTimer
             myCommando.CommandText = "inserir_servico"; //cujo nome é... 
             myCommando.Connection = myConn; //conexão a usar
             myCommando.Parameters.AddWithValue("@nome", tbServico.Text);
-            
+            myCommando.Parameters.AddWithValue("@descricao", tbdescricao.Text);
+
 
             myConn.Open();
             myCommando.ExecuteNonQuery();//Execução Procedure sem devolução de dados executa, mas não devolve nada

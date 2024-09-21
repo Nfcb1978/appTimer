@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Base2.Master" AutoEventWireup="true" CodeBehind="ExecutarTrabalho.aspx.cs" Inherits="appTimer.ExecutarTrabalho" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/Base2.Master" AutoEventWireup="true" CodeBehind="ExecutarTrabalho.aspx.cs" Inherits="appTimer.ExecutarTrabalho" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -108,8 +109,6 @@
          }
         
     </style>
-     
-
 
    
       <main role="main"  class="col-md-12 ml-sm-auto  col-lg-12 px-m-0 ms-0">
@@ -195,8 +194,7 @@
                
            </div>
             </div>
-    
-<asp:UpdatePanel ID="UpdatePanel1" runat="server">
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
     <ContentTemplate>
         <!-- Label onde será exibida a mensagem após o processamento -->
       
@@ -216,6 +214,7 @@
 <!-- Script para chamar o postback de forma assíncrona e exibir o GIF -->
 <script type="text/javascript">
     window.onload = function () {
+        startTimer();
         // Exibe o GIF de carregamento e dispara o processamento no servidor
         document.getElementById('loadingGif').style.display = 'block'; // Exibe o GIF
 
@@ -223,6 +222,7 @@
         setTimeout(function () {
             __doPostBack('<%= btnPostback.UniqueID %>', ''); // Dispara o processamento no servidor
         }, 500); // Espera meio segundo para garantir que o GIF seja exibido antes do postback
+
     };
 </script>
 

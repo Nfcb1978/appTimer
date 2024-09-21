@@ -13,7 +13,7 @@
             background-color:white; 
        
                       
-                    
+                 
         }
         body
         {
@@ -92,7 +92,6 @@
     </style>
      
 
-
      
       <main role="main"  class="col-md-12 ml-sm-auto  col-lg-12 px-m-0 ms-0">
    
@@ -129,7 +128,7 @@
                     <div class="card-body">
         
                  <h5 class="h3">
-                    <asp:Label ID="lbl_tarefa" runat="server" Text="Tarefa" Font-Bold="True" Font-Size="Medium"></asp:Label></h5>
+                    <asp:Label ID="lbl_servico" runat="server" Text="Tarefa" Font-Bold="True" Font-Size="Medium"></asp:Label></h5>
     
                           
                    
@@ -211,7 +210,7 @@
      <br />
             <button type="button" Class="btn-light w-10" onclick="clearSignature('signature')">Clear</button>
        
-          <button type="button" Class="btn-light w-10" onclick="saveSignature('signature')">Save</button>
+          
 
             <br />
               <br />
@@ -233,8 +232,7 @@
     </main>
           
     <script>
-             
-       
+        
         
         function setupCanvas(signature) {
             const canvas = document.getElementById(signature);

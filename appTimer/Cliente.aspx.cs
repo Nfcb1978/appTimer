@@ -152,11 +152,7 @@ namespace appTimer
             }
 
 
-            /*
-            String pesquisa = tb_pesquisa.Value;
-
-            SqlDataSource1.SelectCommand = $"Select * from mercados where mercado like '{pesquisa}%'";
-        */
+           
         }
 
         protected void Bt_pesquisa_Click(object sender, ImageClickEventArgs e)

@@ -65,6 +65,11 @@
             <asp:TextBox ID="tbServico" runat="server" placeholder="Insira o seu nome do Serviço" CssClass="form-control" required Font-Bold="True"></asp:TextBox>
                </div>
 
+        <div class="form-group">
+               <label for="Servico"><b>Serviço:</b></label>
+            <asp:TextBox ID="tbdescricao" runat="server" placeholder="Insira a descrição do Serviço" CssClass="form-control" required Font-Bold="True" TextMode="MultiLine"></asp:TextBox>
+               </div>
+
         
        
         <asp:Button ID="Btn_Inserir" OnClick="Btn_Inserir_Click" runat="server" Text="Inserir" Font-Bold="True" />

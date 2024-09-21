@@ -20,22 +20,22 @@ namespace appTimer
         {
      if (Session["utilizador"] == null)
             {
-               Response.Redirect("login.aspx");
+          //    Response.Redirect("login.aspx");
             }
             if (Request.QueryString["nome"] == null)
             {
-                Response.Redirect("cliente.aspx");
+           //   Response.Redirect("cliente.aspx");
             }
 
 
-            lbl_nome.Text= Convert.ToString(Request.QueryString["nome"]);
+           // lbl_nome.Text= Convert.ToString(Request.QueryString["nome"]);
             
 
            
 
-            Session["nome"] = lbl_nome.Text;
+            Session["cliente"] = lbl_nome.Text;
             //Ir buscar dados Base de dados
-            string query = "select nome from Tarefas";
+            string query = "select * from Servicos";
             //Copia a connectio á BD e comand não copia procedure
             SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["TimerConnectionString"].ConnectionString);//estabilecer conexão
 

@@ -5,6 +5,7 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
+      
         /* Estilo personalizado para centralizar a imagem verticalmente */
         .center {
             display: flex;
@@ -29,23 +30,38 @@
         .corpo {
             background-color: darkgray;
         }
-       
-        
+      
           
         .card-body{
            
-            background-color:#333;
-           
-
+            background-color:#333;               
         }
          .card-body:hover{
            
             background-color:darkslategray;
 
         }
+          .mb-3 {
+           
+            background-color: aqua;
+            font-family: Tahoma;
+            
+            border: 5px solid blueviolet;
+            border-radius: 20px;
+           }
+          .navegacao
+          {
+              margin-bottom: 10px;
+              
+          }
+
+       
+        
+        
 
     </style>
-   
+
+    
     <main role="main"  class="col-md-12 ml-sm-auto  col-lg-12 px-m-0 ms-0">
         
         <div class="col-12">
@@ -55,7 +71,7 @@
                 <br />
 
 
-                <h3 class="h3">ESCOLHA O TRABALHO</h3>
+                <h3 class="h3">ESCOLHA O SERVIÇO A EXECUTAR</h3>
             </div>
         </div>
        
@@ -137,7 +153,7 @@
              
 
                
-      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TimerConnectionString %>" SelectCommand="SELECT * FROM [Tarefas]"></asp:SqlDataSource>
+      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TimerConnectionString %>" SelectCommand="SELECT * FROM [Servicos]"></asp:SqlDataSource>
 
 
 

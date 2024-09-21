@@ -46,7 +46,7 @@
         function Bfunction() {
             startTimer();
           saveSignature('signature');
-
+          
         }
 
         function sendData() {
@@ -72,8 +72,9 @@
                 }
             });
         }
-
-
+        
+       
+            
 
         function formatTime(seconds) {
             var h = Math.floor(seconds / 3600).toString().padStart(2, '0');
@@ -82,10 +83,10 @@
             return h + ':' + m + ':' + s;
         }
 
-        
-          
 
-       
+
+
+
         function getUpdatedTime(callback) {
             $.ajax({
                 type: "POST",
@@ -102,8 +103,8 @@
             });
         }
 
-      
-        
+
+
 
         function totalTime(hh, mm, ss, seconds) {
             var sss = parseInt(hh) * 3600 + parseInt(mm) * 60 + parseInt(ss) + seconds;
@@ -123,14 +124,13 @@
         function updateTimer() {
             document.getElementById('timerDisplay').innerText = formatTime(seconds);
             document.getElementById('cronometro').innerText = formatTime(seconds);
-          getUpdatedTime(function (hh, mm, ss) {
+            getUpdatedTime(function (hh, mm, ss) {
                 var result = totalTime(hh, mm, ss, seconds);
-              document.getElementById('total').innerText = "Total Hoje: " + result;
+                document.getElementById('total').innerText = "Total Hoje: " + result;
                 seconds++;
             });
         }
 
-      
 
         function startTimer() {
             if (!timer) {
@@ -138,16 +138,23 @@
             }
             document.getElementById('start').style.display = 'none';
             document.getElementById('stop').style.display = 'inline';
-          
-        }
 
+            if (window.location.pathname === "/Iniciar_Trabalho.aspx") {
+                executarTrabalho("https://localhost:44388/ExecutarTrabalho.aspx");
+            }
+        }
+        function executarTrabalho(url) {
+          
+            window.location.href = url; // Redireciona para a página especificada
+        }
+        
         function stopTimer() {
             if (timer) {
                 clearInterval(timer);
                 timer = null;
                 document.getElementById('start').style.display = 'inline';
                 document.getElementById('stop').style.display = 'none';
-              
+
 
             }
         }
@@ -157,11 +164,12 @@
             seconds = 0;
             document.getElementById('timerDisplay').innerText = '00:00:00';
             document.getElementById('cronometro').innerText = '00:00:00';
-                      
-        }
+        }  
 
-        
+              
     </script>
+
+      
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>

@@ -25,38 +25,39 @@ namespace appTimer
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            /*
 
-            if (Session["utilizador"] == null)
-            {
-         // Response.Redirect("login.aspx");
-            }
-            //Se não escolher cliente
-     /*      if  ((Session["cliente"] == null) &&(Session["nome"] == null))
-            {
-                Response.Redirect("tarefa.aspx");
+             if (Session["utilizador"] == null)
+             {
+           Response.Redirect("login.aspx");
+             }
+             //Se não escolher cliente
+            if  (Session["cliente"] == null)
+                 {
+                    Response.Redirect("cliente.aspx");
 
-            }//Vem da pagina tarefa
-            else if (Session["cliente"] != null)
+                  }
+             else
             {
-               lbl_nome.Text = Session["cliente"].ToString();
-            }
-            else if (Session["nome"] != null)
-            {
-                lbl_nome.Text = Session["nome"].ToString();
+                lbl_nome.Text = Session["cliente"].ToString();
             }
 
-         
-           */
+            //Verificar se existe serviço escolhido
+            if (Request.QueryString["servico"] == null)
+            {
+                Response.Redirect("servico.aspx");
+            }
+            else
+            {
+                lbl_servico.Text = Convert.ToString(Request.QueryString["servico"]);
+                Session["servico"] = lbl_servico.Text;
+            }
 
-
-
-            //Recebe o nome da Tarefa
-            lbl_tarefa.Text = Convert.ToString(Request.QueryString["nome"]);
+            */
            
 
         }
-        
+
         [WebMethod]
 
         public static object SaveTime(string hours, string minutes, string seconds)
