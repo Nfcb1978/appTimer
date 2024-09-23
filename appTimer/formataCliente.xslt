@@ -36,7 +36,7 @@
 									</a>&#160;&#160;
 								</h5>
 								<h5>
-									<a  href="https://localhost:44388/servico.aspx?nome={nome}"
+									<a  href="https://localhost:44388/servico.aspx?nome={nome}&amp;id={numero_Cliente}"
 				   target ="_blank" style="color: white;">
 										
 										<xsl:value-of select="nome"/>

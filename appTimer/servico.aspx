@@ -34,12 +34,13 @@
           
         .card-body{
            
-            background-color:#333;               
+            background-color:#333;  
+              
         }
          .card-body:hover{
            
             background-color:darkslategray;
-
+           
         }
           .mb-3 {
            
@@ -66,29 +67,32 @@
         
         <div class="col-12">
             <div class="centro">
-                <h2 class="h2">
-                    <asp:Label ID="lbl_nome" runat="server" Text=""></asp:Label></h2>
+                <h4 class="h4">
+                    <asp:Label ID="lbl_nome" runat="server" Text=""></asp:Label></h4>
                 <br />
 
 
-                <h3 class="h3">ESCOLHA O SERVIÇO A EXECUTAR</h3>
+                <h4 class="h3">ESCOLHA O SERVIÇO</h4>
             </div>
         </div>
        
 
 
-         <div class="card mb-3" style=" background-color:#333 ">
+  <div class="card mb-4" style=" background-color:#333 ">
             <div class="row g-0">
                 <div class="col-md-12">
                     <div class="left">
                        
-                          <div class="input-group mx-sm-3 mb-2" >
+                          <div  class="input-group mx-sm-3 mb-2" style="height: 20px;" >
 
-                <input type="search" style=" color:white; background-color:darkslategray " class="form-control" placeholder="Procura um projecto..." >
               
-                              <div class="input-group-append">
-                    <span class="input-group-text"><i class="fas fa-search" style="color:darkslategray"></i></span>
-                </div>
+              
+                            <input type="text" id="tb_pesquisa" runat="server" style=" color:white; background-color:darkslategray " class="form-control" placeholder="Procura um serviço" aria-label="Pesquisa" aria-describedby="button-pesquisa">
+                              <asp:ImageButton ID="Bt_pesquisa" OnClick="Bt_pesquisa_Click"  ImageUrl="~/Imagens/OIP1.jpg" runat="server" />
+			                            
+                          
+
+                              
             </div>
 
                     </div>
@@ -99,25 +103,9 @@
 
        </div>
 
-         <div class="card mb-3" style=" background-color:#333 ">
-            <div class="row g-0">
-               
-                <div class="col-md-12">
-                    <div class="card-body" >
-                         <div class="center">
-                         <h5>   <asp:LinkButton ID="Lb_CriarTrablaho" OnClick="Lb_CriarTrablaho_Click" runat="server" ForeColor="White">Criar um novo Trabalho</asp:LinkButton></h5>
-                        
-                    </div>
-                </div>
-                </div>                
-            </div>
-        </div>
+         <asp:Repeater ID="rtp_pesquisa" runat="server" DataSourceID="SqlDataSource1" OnItemDataBound="rtp_pesquisa_ItemDataBound">
 
-        <asp:Xml ID="Xml1" runat="server" ValidateRequestMode="Disabled" TransformSource="~/formata Servico.xslt"></asp:Xml>
-
-                 
-        <asp:Repeater ID="rtp_servico" runat="server" DataSourceID="SqlDataSource1" OnItemDataBound="rtp_servico_ItemDataBound">
-       <ItemTemplate>
+                                  <ItemTemplate>
 
 
 
@@ -125,7 +113,7 @@
              <div class="row g-0">
                <div class="col-md-12">
                     <div class="card-body">
-           
+         
                 
     <asp:Label ID="lbl_servico" runat="server" Text="" CssClass="center" Font-Bold="True" Font-Size="Large"></asp:Label>
       
@@ -138,7 +126,27 @@
             </div>
 
     </ItemTemplate>
-            </asp:Repeater>      
+
+
+                              </asp:Repeater>
+
+         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TimerConnectionString %>" SelectCommand="SELECT * FROM [Servicos]"></asp:SqlDataSource>
+
+        
+
+        <asp:Xml ID="Xml1" runat="server" ValidateRequestMode="Disabled" TransformSource="~/formata Servico.xslt"></asp:Xml>
+
+                 
+       <!-- Botões de navegação para mudar de página -->
+          <div class="navegacao">
+                <asp:Button ID="btnPrevious" runat="server" Text="Anterior" OnClick="btnPrevious_Click" CssClass="btn-primary" />
+                <asp:Button ID="btnNext" runat="server" Text="Próxima" OnClick="btnNext_Click" CssClass="btn-primary" />
+               
+            </div>
+       <div class="navegacao">
+     <asp:Panel ID="paginationPanel" runat="server" ></asp:Panel>
+
+        </div>
 
 
 
@@ -153,8 +161,7 @@
              
 
                
-      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TimerConnectionString %>" SelectCommand="SELECT * FROM [Servicos]"></asp:SqlDataSource>
-
+    
 
 
 

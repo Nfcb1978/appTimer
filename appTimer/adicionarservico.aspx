@@ -66,7 +66,7 @@
                </div>
 
         <div class="form-group">
-               <label for="Servico"><b>Serviço:</b></label>
+               <label for="Servico"><b>Descrição:</b></label>
             <asp:TextBox ID="tbdescricao" runat="server" placeholder="Insira a descrição do Serviço" CssClass="form-control" required Font-Bold="True" TextMode="MultiLine"></asp:TextBox>
                </div>
 

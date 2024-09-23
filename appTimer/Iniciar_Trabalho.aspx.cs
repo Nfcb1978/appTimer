@@ -25,7 +25,7 @@ namespace appTimer
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*
+            
 
              if (Session["utilizador"] == null)
              {
@@ -39,7 +39,7 @@ namespace appTimer
                   }
              else
             {
-                lbl_nome.Text = Session["cliente"].ToString();
+                lbl_nome.Text = "Cliente: " + Session["cliente"].ToString() +"ID cliente "+ Session["idCliente"].ToString() +"iD Serviço" + Convert.ToString(Request.QueryString["idservico"]);
             }
 
             //Verificar se existe serviço escolhido
@@ -49,11 +49,11 @@ namespace appTimer
             }
             else
             {
-                lbl_servico.Text = Convert.ToString(Request.QueryString["servico"]);
+                lbl_servico.Text = "Serviço: " + Convert.ToString(Request.QueryString["servico"]);
                 Session["servico"] = lbl_servico.Text;
             }
 
-            */
+            
            
 
         }

@@ -82,11 +82,13 @@
   <ItemGroup>
     <Content Include="adicionarCliente.aspx" />
     <Content Include="adicionarservico.aspx" />
-    <Content Include="Adicionar_Produto .aspx" />
+    <Content Include="Adicionar_Produto.aspx" />
     <Content Include="agenda.aspx" />
+    <Content Include="alterarservico.aspx" />
     <Content Include="detalheCliente.aspx" />
     <Content Include="ExecutarTrabalho.aspx" />
     <Content Include="Finalizar_Trabalho.aspx" />
+    <Content Include="FormataManutencaoServicos.xslt" />
     <Content Include="Imagens\cancel.png" />
     <Content Include="Imagens\confirmar.png" />
     <Content Include="Imagens\delete.png" />
@@ -94,7 +96,7 @@
     <Content Include="Imagens\edit.png" />
     <Content Include="Imagens\save-32.png" />
     <Content Include="index.aspx" />
-    <Content Include="formata Servico.xslt" />
+    <Content Include="formataServico.xslt" />
     <Content Include="formataCliente.xslt">
       <SubType>Designer</SubType>
     </Content>
@@ -120,11 +122,14 @@
     <Content Include="Imagens\OIP.jpg" />
     <Content Include="Imagens\stop.png" />
     <Content Include="Login.aspx" />
+    <Content Include="Manutencao.aspx" />
+    <Content Include="ManutencaoProdutos.aspx" />
     <Content Include="perfil.aspx" />
     <Content Include="Produtos.aspx" />
     <Content Include="servico.aspx" />
     <Content Include="Trabalhos.aspx" />
     <Content Include="Iniciar_Trabalho.aspx" />
+    <Content Include="Vendas.aspx" />
     <Content Include="Web.config" />
     <Content Include="Cliente.aspx" />
     <Content Include=".aspx" />
@@ -144,12 +149,12 @@
     <Compile Include="adicionarservico.aspx.designer.cs">
       <DependentUpon>adicionarservico.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Adicionar_Produto .aspx.cs">
-      <DependentUpon>Adicionar_Produto .aspx</DependentUpon>
+    <Compile Include="Adicionar_Produto.aspx.cs">
+      <DependentUpon>Adicionar_Produto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Adicionar_Produto .aspx.designer.cs">
-      <DependentUpon>Adicionar_Produto .aspx</DependentUpon>
+    <Compile Include="Adicionar_Produto.aspx.designer.cs">
+      <DependentUpon>Adicionar_Produto.aspx</DependentUpon>
     </Compile>
     <Compile Include="agenda.aspx.cs">
       <DependentUpon>agenda.aspx</DependentUpon>
@@ -157,6 +162,13 @@
     </Compile>
     <Compile Include="agenda.aspx.designer.cs">
       <DependentUpon>agenda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="alterarservico.aspx.cs">
+      <DependentUpon>alterarservico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="alterarservico.aspx.designer.cs">
+      <DependentUpon>alterarservico.aspx</DependentUpon>
     </Compile>
     <Compile Include="detalheCliente.aspx.cs">
       <DependentUpon>detalheCliente.aspx</DependentUpon>
@@ -207,6 +219,20 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Manutencao.aspx.cs">
+      <DependentUpon>Manutencao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manutencao.aspx.designer.cs">
+      <DependentUpon>Manutencao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManutencaoProdutos.aspx.cs">
+      <DependentUpon>ManutencaoProdutos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManutencaoProdutos.aspx.designer.cs">
+      <DependentUpon>ManutencaoProdutos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="perfil.aspx.cs">
       <DependentUpon>perfil.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -256,6 +282,13 @@
     </Compile>
     <Compile Include=".aspx.designer.cs">
       <DependentUpon>.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vendas.aspx.cs">
+      <DependentUpon>Vendas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vendas.aspx.designer.cs">
+      <DependentUpon>Vendas.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

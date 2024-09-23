@@ -4,8 +4,6 @@
 >
     <xsl:output method="xml" indent="yes"/>
 
-	
-
 	<!-- Parâmetros para controlar a página atual e o número de itens por página -->
 	<xsl:param name="page" select="1" />
 	<xsl:param name="itemsPerPage" select="5" />
@@ -32,22 +30,35 @@
 									<a  href="https://localhost:44388/Iniciar_Trabalho.aspx?servico={servico}"
 				   target ="_blank" style="color: white;">
 										<xsl:value-of select="servico"/>
-									</a>&#160;&#160;
+									</a>&#160;&#160;=>
 								</h5>
 
 								<h5 >
 									<a  href="https://localhost:44388/Iniciar_Trabalho.aspx?descricao={descricao}"
 				   target ="_blank" style="color: white;">
 										<xsl:value-of select="descricao"/>
+
 									</a>
+
 								</h5>
+
+
 
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			<div class="center">
+				<h5 style="margin: 0;">
+					<a  href="https://localhost:44388/alterarservico.aspx?id={id}"
+					   target ="_blank" style="color: white;">
+						Alterar
+					</a>
+				</h5>
 
+			</div>
+			<br/>
 		</xsl:for-each>
     </xsl:template>
 </xsl:stylesheet>

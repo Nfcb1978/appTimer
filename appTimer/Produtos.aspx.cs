@@ -27,7 +27,7 @@ namespace appTimer
                 /*Cast para label para assumir o .Text*/
                 ((Label)e.Item.FindControl("lbl_cod")).Text = dr["id"].ToString();//Vou procurar o lbl_cod e coloco os dados da DB campo cod_avaliacao
                 ((Label)e.Item.FindControl("lbl_nome")).Text = dr["Nome"].ToString();
-                ((Label)e.Item.FindControl("lbl_preco")).Text = dr["Preco"].ToString();
+                ((Label)e.Item.FindControl("lbl_preco")).Text = dr["Preco"].ToString() + " Eur";
                 ((Label)e.Item.FindControl("lbl_descricao")).Text = dr["descricao"].ToString();
                 ((Image)e.Item.FindControl("img_foto")).ImageUrl = "data:image/jpeg;base64," + Convert.ToBase64String((byte[])dr["foto"]);
 
@@ -36,11 +36,7 @@ namespace appTimer
             }
         }
 
-        protected void lb_Adicionar_Produto_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Adicionar_Produto.aspx");
-        }
-
+      
         protected void rtp_produtos_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             if (e.CommandName.Equals("btn_carrinho")/*icon*/)
@@ -57,6 +53,13 @@ namespace appTimer
                 myComand.ExecuteNonQuery();
                 myConn.Close();
             }
+        }
+
+      
+
+        protected void lb_Alterar_Dados_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ManutencaoProdutos.aspx");
         }
     }
     }

@@ -5,6 +5,7 @@
     <style>
     .table{
         color:white;
+        text-align:center;
     }
 
 
@@ -106,18 +107,10 @@
 
                               <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TimerConnectionString %>" SelectCommand="SELECT * FROM [Produtos]"></asp:SqlDataSource>
 
-         <div class="card mb-4" style=" background-color:#333 ">
-            <div class="row g-0">
-               
-                <div class="col-md-12" ">
-                    <div class="card-body" >
-                         <div class="center">                        
-                          <h5>   <asp:LinkButton ID="lb_Adicionar_Produto" runat="server" OnClick="lb_Adicionar_Produto_Click" ForeColor="White">Adicionar um novo Cliente</asp:LinkButton></h5>
-                    </div>
-                </div>
-                </div>                
-            </div>
-        </div>
+     
+
+
+         
 
 
 

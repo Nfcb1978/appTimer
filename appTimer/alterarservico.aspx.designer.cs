@@ -11,88 +11,61 @@ namespace appTimer
 {
 
 
-    public partial class servico
+    public partial class alterarservico
     {
 
         /// <summary>
-        /// lbl_nome control.
+        /// tb_NServico control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_nome;
+        protected global::System.Web.UI.WebControls.TextBox tb_NServico;
 
         /// <summary>
-        /// tb_pesquisa control.
+        /// tb_servico control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText tb_pesquisa;
+        protected global::System.Web.UI.WebControls.TextBox tb_servico;
 
         /// <summary>
-        /// Bt_pesquisa control.
+        /// tb_descricao control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Bt_pesquisa;
+        protected global::System.Web.UI.WebControls.TextBox tb_descricao;
 
         /// <summary>
-        /// rtp_pesquisa control.
+        /// Btn_Alterar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rtp_pesquisa;
+        protected global::System.Web.UI.WebControls.Button Btn_Alterar;
 
         /// <summary>
-        /// SqlDataSource1 control.
+        /// Btn_Confirmar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.Button Btn_Confirmar;
 
         /// <summary>
-        /// Xml1 control.
+        /// Btn_Adicionar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Xml Xml1;
-
-        /// <summary>
-        /// btnPrevious control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPrevious;
-
-        /// <summary>
-        /// btnNext control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNext;
-
-        /// <summary>
-        /// paginationPanel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel paginationPanel;
+        protected global::System.Web.UI.WebControls.Button Btn_Adicionar;
     }
 }

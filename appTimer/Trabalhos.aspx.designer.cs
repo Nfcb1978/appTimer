@@ -15,6 +15,33 @@ namespace appTimer
     {
 
         /// <summary>
+        /// lbl_nome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_nome;
+
+        /// <summary>
+        /// Criar_Tarefa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton Criar_Tarefa;
+
+        /// <summary>
+        /// Lb_InicioRapido control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton Lb_InicioRapido;
+
+        /// <summary>
         /// Repeater1 control.
         /// </summary>
         /// <remarks>

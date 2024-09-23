@@ -151,11 +151,6 @@
         <asp:Button ID="Btn_Confirmar" OnClick="Btn_Confirmar_Click"  runat="server" Text="Confirmar" Font-Bold="True" />              
     </div>
           </main>
-
-
-
-                              <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TimerConnectionString %>" SelectCommand="SELECT [nome], [Nencomenda], [Comentário], [id] FROM [assistencias]"></asp:SqlDataSource>
-
         
 
 
