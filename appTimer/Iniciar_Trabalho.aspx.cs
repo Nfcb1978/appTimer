@@ -27,7 +27,7 @@ namespace appTimer
         {
             
 
-             if (Session["utilizador"] == null)
+          /*   if (Session["utilizador"] == null)
              {
            Response.Redirect("login.aspx");
              }
@@ -53,7 +53,7 @@ namespace appTimer
                 Session["servico"] = lbl_servico.Text;
             }
 
-            
+            */
            
 
         }

@@ -29,14 +29,14 @@
 							<div class="center">
 
 								<h5 >
-									<a  href="https://localhost:44388/Iniciar_Trabalho.aspx?servico={servico}&amp;idservico={id}"
+									<a  href="https://localhost:44388/Trabalho.aspx?servico={servico}&amp;idservico={id}"
 				   target ="_blank" style="color: white;">
 										<xsl:value-of select="servico"/>
 									</a>&#160;&#160;=>
 								</h5>
 
 								<h5 >
-									<a  href="https://localhost:44388/Iniciar_Trabalho.aspx?descricao={descricao}"
+									<a  href="https://localhost:44388/Trabalho.aspx?servico={servico}&amp;idservico={id}"
 				   target ="_blank" style="color: white;">
 										<xsl:value-of select="descricao"/>
 								

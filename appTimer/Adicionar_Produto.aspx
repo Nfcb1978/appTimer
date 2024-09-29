@@ -86,7 +86,7 @@
        <div class="form-group">
         <asp:Button ID="Btn_Inserir" OnClick="Btn_Inserir_Click"  runat="server" Text="Inserir" Font-Bold="True" CssClass="btn-primary" />
                </div> 
-        
+        <a href="agenda.aspx">agenda.aspx</a>
 
                <div class="form-group">
                    <asp:Label ID="lbl_mensagem" runat="server" Font-Bold="True"></asp:Label>

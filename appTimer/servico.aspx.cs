@@ -61,7 +61,7 @@ namespace appTimer
             }
 
             rtp_pesquisa.Visible = false;
-
+            
             Session["idCliente"] = Convert.ToString(Request.QueryString["id"]);
 
 

@@ -15,7 +15,19 @@ namespace appTimer
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["cliente"] == null)
+            {
+                Response.Redirect("cliente.aspx");
 
+            }
+            
+
+            //Verificar se existe serviço escolhido
+            if (Session["servico"] == null)
+            {
+                Response.Redirect("servico.aspx");
+            }
+           
         }
 
         protected void rtp_produtos_ItemDataBound(object sender, RepeaterItemEventArgs e)
@@ -43,10 +55,13 @@ namespace appTimer
             {
                 SqlConnection myConn = new SqlConnection
               (ConfigurationManager.ConnectionStrings["TimerConnectionString"].ConnectionString);
-                string query = "insert into carrinho (Nome, Preco, Foto )";
-                query += "'" + ((Label)e.Item.FindControl("lbl_nome")).Text + "',";
-                query += "values(parse('" + ((Label)e.Item.FindControl("lbl_preco")).Text + "' as numeric(6,2) using 'PT-pt'),";
-                query += ((Image)e.Item.FindControl("img_foto")).ImageUrl;
+                string query = "insert into carrinho (ordem, idCliente, idproduto, quantidade)";
+                query += "values('" + Session["idcarrinho"].ToString() + "',";
+                query += Session["idCliente"].ToString() + ",";
+                query +=   ((Label)e.Item.FindControl("lbl_cod")).Text + "," + 1+")";
+                
+                  
+               
                
                 myConn.Open();//Abrir a conexão
                 SqlCommand myComand = new SqlCommand(query, myConn); //recebe e query e executa no myConn
@@ -60,6 +75,11 @@ namespace appTimer
         protected void lb_Alterar_Dados_Click(object sender, EventArgs e)
         {
             Response.Redirect("ManutencaoProdutos.aspx");
+        }
+
+        protected void Btn_Confirmar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Trabalho.aspx");
         }
     }
     }

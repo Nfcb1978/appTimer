@@ -107,7 +107,7 @@
 
                               <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TimerConnectionString %>" SelectCommand="SELECT * FROM [Produtos]"></asp:SqlDataSource>
 
-     
+     <asp:Button ID="Btn_Confirmar" OnClick="Btn_Confirmar_Click" runat="server" CssClass="btn-primary w-100 mt-4 mb-4" Text="Confirmar Compra" Font-Bold="True" />
 
 
          

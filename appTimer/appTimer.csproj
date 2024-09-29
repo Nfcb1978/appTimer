@@ -127,8 +127,10 @@
     <Content Include="perfil.aspx" />
     <Content Include="Produtos.aspx" />
     <Content Include="servico.aspx" />
+    <Content Include="Trabalho.aspx" />
     <Content Include="Trabalhos.aspx" />
     <Content Include="Iniciar_Trabalho.aspx" />
+    <Content Include="Trabalho_Detalhe.aspx" />
     <Content Include="Vendas.aspx" />
     <Content Include="Web.config" />
     <Content Include="Cliente.aspx" />
@@ -262,6 +264,13 @@
     <Compile Include="Cliente.aspx.designer.cs">
       <DependentUpon>Cliente.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Trabalho.aspx.cs">
+      <DependentUpon>Trabalho.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Trabalho.aspx.designer.cs">
+      <DependentUpon>Trabalho.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Trabalhos.aspx.cs">
       <DependentUpon>Trabalhos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -282,6 +291,13 @@
     </Compile>
     <Compile Include=".aspx.designer.cs">
       <DependentUpon>.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Trabalho_Detalhe.aspx.cs">
+      <DependentUpon>Trabalho_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Trabalho_Detalhe.aspx.designer.cs">
+      <DependentUpon>Trabalho_Detalhe.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vendas.aspx.cs">
       <DependentUpon>Vendas.aspx</DependentUpon>

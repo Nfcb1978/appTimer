@@ -72,7 +72,7 @@
 
         
        
-        <asp:Button ID="Btn_Inserir" OnClick="Btn_Inserir_Click" runat="server" Text="Inserir" Font-Bold="True" />
+        <asp:Button ID="Btn_Inserir" OnClick="Btn_Inserir_Click" runat="server" CssClass="btn-primary" Text="Inserir" Font-Bold="True" />
                          
    
           </main>           
