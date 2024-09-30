@@ -63,7 +63,7 @@
  <div class="form-group">
 
                <label for="nome"><b>Nome:</b></label>
-            <asp:TextBox ID="tbNome" runat="server" placeholder="Insira o seu nome" CssClass="form-control" required Font-Bold="True"></asp:TextBox>
+            <asp:TextBox ID="tbNome" runat="server" placeholder="Insira o seu nome"  CssClass="form-control" required Font-Bold="True"></asp:TextBox>
                </div>
    <div class="form-group">
                <label for="morada"><b>Morada:</b></label>
@@ -83,7 +83,7 @@
             <asp:TextBox ID="tb_freguesia" runat="server" placeholder="Insira a sua freguesia" CssClass="form-control" Font-Bold="True"></asp:TextBox>
                </div> 
         
-<!--
+
 
 
      <div class="form-group">
@@ -121,7 +121,7 @@
             <asp:TextBox ID="tb_telefone2" runat="server" placeholder="insira o segundo telefone" CssClass="form-control" TextMode="SingleLine" Font-Bold="True"></asp:TextBox>
               </div>               
                 
-        -->
+  
        
         <asp:Button ID="Btn_Inserir" OnClick="Btn_Inserir_Click" CssClass="btn-primary" runat="server" Text="Inserir" Font-Bold="True" />
                          

@@ -14,7 +14,18 @@ namespace appTimer
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // int num = Convert.ToInt32(Request.QueryString["num"]);
+            if (Session["utilizador"] == null)
+            {
+                Response.Redirect("login.aspx");
+            }
+            //Se não escolher cliente
+            if (Session["cliente"] == null)
+            {
+                Response.Redirect("cliente.aspx");
+
+            }
+
+            string entrada = Session["entrada"].ToString();
 
             SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["TimerConnectionString"].ConnectionString);//estabilecer conexão
 
@@ -22,7 +33,7 @@ namespace appTimer
             myCommando.CommandType = CommandType.StoredProcedure; //vamos usar uma store procedure
             myCommando.CommandText = "trabalho_detalhe"; //cujo nome é... 
             myCommando.Connection = myConn; //conexão a usar
-           // myCommando.Parameters.AddWithValue("@num", 1);
+            myCommando.Parameters.AddWithValue("@entrada", entrada);
 
             myConn.Open();
             SqlDataReader dr = myCommando.ExecuteReader(); //Receber dados da consulta
@@ -31,8 +42,11 @@ namespace appTimer
                 lbl_nomecliente.Text = dr["nome"].ToString();//campo nome do dr
                 lbl_NIFcliente.Text = dr["nif"].ToString();//campo nome do dr
                 lbl_servico.Text = dr["servico"].ToString();//campo nome do dr
+                lbl_datainicio.Text= dr["datainicio"].ToString();
+                lbl_datainicio.Text = dr["dataFim"].ToString();
+                lbl_datainicio.Text = dr["tempoPrevisto"].ToString();
                 img_assinatura.ImageUrl = "data:image/jpeg;base64," + Convert.ToBase64String((byte[])dr["assinatura"]);
-
+                Session["trabalhoid"]= dr["NTrabalho"].ToString();
             }
 
 
@@ -54,6 +68,11 @@ namespace appTimer
 
 
             }
+        }
+
+        protected void Btn_Confirma_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Iniciar_Trabalho.aspx");
         }
     }
 }

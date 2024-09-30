@@ -72,7 +72,7 @@
         
 
       <div class="card mb-3" style=" background-color:darkslategray ">
-             <a href="Produtos.aspx" style="text-decoration: none; color: inherit;">
+             <a href="EntregaMaterial.aspx" style="text-decoration: none; color: inherit;">
             <div class="row g-0">
                 <div class="col-md-6">
                     <div class="left">

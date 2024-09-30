@@ -15,21 +15,19 @@ namespace appTimer
     public partial class Trabalho : System.Web.UI.Page
     {
      
-      string idcliente = "";
-        protected bool isWebMethodExecuted = false;
+      int idcliente = 0;
+        
         string idcarrinho = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                HttpContext.Current.Session["assinaturaSalva"] = false; // Inicialização
-                Label1.Text = HttpContext.Current.Session["assinaturaSalva"].ToString();
-            }
+            
+          
 
-            {
-              
-              
-            }
+               
+               
+            
+
+          
             if (Session["utilizador"] == null)
             {
                 Response.Redirect("login.aspx");
@@ -55,20 +53,23 @@ namespace appTimer
                 if(Request.QueryString["servico"]!=null)
                     {
                 Session["servico"] = Convert.ToString(Request.QueryString["servico"]);
-                
+                Session["idservico"] = Request.QueryString["idservico"].ToString();
             }
             lbl_servico.Text = "Serviço: " + Session["servico"];
+
+
+         
         }
 
 
-            
 
 
-            [WebMethod(EnableSession = true)]
+
+        [WebMethod(EnableSession = true)]
         public static void SaveTrabalho(string imageData, string contentType)
         {
 
-         
+
             // Remove o prefixo "data:image/png;base64," da string base64
             string base64String = imageData.Replace("data:image/png;base64,", "");
 
@@ -84,7 +85,7 @@ namespace appTimer
             myCommando.CommandType = CommandType.StoredProcedure; //vamos usar uma store procedure
             myCommando.CommandText = "inserir_assinatura"; //cujo nome é... 
             myCommando.Connection = myConn; //conexão a usar
-            
+
             myCommando.Parameters.AddWithValue("@ct", contentType);
             myCommando.Parameters.AddWithValue("@assinatura", imageBytes);
             myCommando.Parameters.AddWithValue("@RecordDate", DateTime.Today);
@@ -99,19 +100,21 @@ namespace appTimer
                 throw new Exception("Variável de sessão 'idCliente' não encontrada.");
             }
 
+
+          
+
+        
+
             // Abre a conexão, executa a consulta e fecha a conexão
             myConn.Open();
             myCommando.ExecuteNonQuery(); // Execução da Procedure
             myConn.Close();
+            
 
-       //     HttpContext.Current.Session["assinaturaSalva"] = true;/
+
 
         }
-       /* [WebMethod(EnableSession = true)]
-        public static bool IsAssinaturaSalva()
-        {
-            return HttpContext.Current.Session["assinaturaSalva"] != null && (bool)HttpContext.Current.Session["assinaturaSalva"];
-        }*/
+
 
         protected void Btn_Confirma_Click(object sender, EventArgs e)
         {
@@ -121,8 +124,10 @@ namespace appTimer
                 valor = Session["idcarrinho"].ToString();
                
             }
-
-            int servico =int.Parse(Convert.ToString(Request.QueryString["id"]));
+            idcliente= int.Parse(Session["idCliente"].ToString());
+            int servico =int.Parse(Session["idservico"].ToString());
+            string entrada = DateTime.Now.ToString();
+            Session["entrada"] = entrada;
 
             SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["TimerConnectionString"].ConnectionString);//estabilecer conexão
 
@@ -137,7 +142,7 @@ namespace appTimer
             myCommando.Parameters.AddWithValue("@datainicio", tbDataInicio.Text);
             myCommando.Parameters.AddWithValue("@datafim", tbDataFim.Text);
             myCommando.Parameters.AddWithValue("@tempoprevisto", TbTempoPrevisto.Text);
-
+            myCommando.Parameters.AddWithValue("@entrada", entrada);
 
             myConn.Open();
             myCommando.ExecuteNonQuery();//Execução Procedure sem devolução de dados executa, mas não devolve nada

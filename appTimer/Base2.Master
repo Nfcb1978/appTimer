@@ -57,7 +57,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "Iniciar_Trabalho.aspx/SaveTime",
+                url: "Executar_Trabalho.aspx/SaveTime",
                 data: JSON.stringify({ hours: h, minutes: m, seconds: s }),
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
@@ -90,7 +90,7 @@
         function getUpdatedTime(callback) {
             $.ajax({
                 type: "POST",
-                url: "Iniciar_Trabalho.aspx/GetTime",
+                url: "Executar_Trabalho.aspx/GetTime",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (response) {
@@ -239,7 +239,7 @@
                                     <img src="Imagens/Ativo 3.png" /></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Produtos.aspx">
+                                <a class="nav-link" href="ManutencaoProdutos.aspx">
                                     <img src="Imagens/Ativo 4.png" /></a>
                             </li>
                             <li class="nav-item">

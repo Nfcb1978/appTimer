@@ -113,7 +113,7 @@
                     <div class="card-body">
         
                  <h3 class="h3">
-                    <asp:Label ID="lbl_nome" runat="server" Text="Nome" Font-Bold="True" Font-Size="XX-Large"></asp:Label></h3>
+                    <asp:Label ID="lbl_nome" runat="server" Text="" Font-Bold="True" Font-Size="XX-Large"></asp:Label></h3>
     
                           
                    

@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         /* Estilo personalizado para centralizar a imagem verticalmente */
@@ -35,6 +35,9 @@
 
                                     <th scope="col">Serviço Contratado</th>
                                     <th scope="col">Assinatura cliente:</th>
+                                    <th scope="col">Data Inicio:</th>
+                                    <th scope="col">Data Fim:</th>
+                                    <th scope="col">Tempo Previsto:</th>
                                                                        
 
 
@@ -47,7 +50,9 @@
                                 <td scope="col"><asp:Label ID="lbl_nomecliente" runat="server" Text="" Font-Bold="True"></asp:Label></td>
                                  <td scope="col"><asp:Label ID="lbl_NIFcliente" runat="server" Text="" Font-Bold="True"></asp:Label></td>
                                  <td scope="col"><asp:Label ID="lbl_servico" runat="server" Text="" Font-Bold="True"></asp:Label></td>
-                                 
+                               <td scope="col"><asp:Label ID="lbl_datainicio" runat="server" Text="" Font-Bold="True"></asp:Label></td>
+                                 <td scope="col"><asp:Label ID="lbl_datafim" runat="server" Text="" Font-Bold="True"></asp:Label></td>
+                                 <td scope="col"><asp:Label ID="lbl_tempoprevisto" runat="server" Text="" Font-Bold="True"></asp:Label></td>  
                                
                                     <td><asp:Image ID="img_assinatura" runat="server"  /></td>  
                                                                        
@@ -126,5 +131,12 @@
 
 
     </asp:Repeater>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TimerConnectionString %>" SelectCommand="trabalho_detalhe" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TimerConnectionString %>" SelectCommand="trabalho_detalhe" SelectCommandType="StoredProcedure">
+        <SelectParameters>
+            <asp:SessionParameter Name="entrada" SessionField="entrada" Type="String" />
+        </SelectParameters>
+                            </asp:SqlDataSource>
+
+                            <asp:Button ID="Btn_Confirma" OnClick="Btn_Confirma_Click" runat="server" CssClass="btn-primary w-100 mt-4 mb-4" Text="Confirmar Trabalho" Font-Bold="True" Enabled="True" />
+                         
 </asp:Content>

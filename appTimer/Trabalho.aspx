@@ -95,7 +95,7 @@
         
                  <h3 class="h3">
                     <asp:Label ID="lbl_nome" runat="server" Text="Nome" Font-Bold="True" Font-Size="XX-Large"></asp:Label></h3>
-                        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                     
 
                     </div>
                     </div>
@@ -289,7 +289,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "Trabalho.aspx/SaveSignature",
+                url: "Trabalho.aspx/SaveTrabalho",
                 data: JSON.stringify({ imageData: dataURL, contentType: contentType }),
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",

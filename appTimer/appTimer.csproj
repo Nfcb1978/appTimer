@@ -86,9 +86,11 @@
     <Content Include="agenda.aspx" />
     <Content Include="alterarservico.aspx" />
     <Content Include="detalheCliente.aspx" />
+    <Content Include="EntregaMaterial.aspx" />
     <Content Include="ExecutarTrabalho.aspx" />
     <Content Include="Finalizar_Trabalho.aspx" />
     <Content Include="FormataManutencaoServicos.xslt" />
+    <Content Include="FormataTrbalhos.xslt" />
     <Content Include="Imagens\cancel.png" />
     <Content Include="Imagens\confirmar.png" />
     <Content Include="Imagens\delete.png" />
@@ -178,6 +180,13 @@
     </Compile>
     <Compile Include="detalheCliente.aspx.designer.cs">
       <DependentUpon>detalheCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EntregaMaterial.aspx.cs">
+      <DependentUpon>EntregaMaterial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EntregaMaterial.aspx.designer.cs">
+      <DependentUpon>EntregaMaterial.aspx</DependentUpon>
     </Compile>
     <Compile Include="ExecutarTrabalho.aspx.cs">
       <DependentUpon>ExecutarTrabalho.aspx</DependentUpon>

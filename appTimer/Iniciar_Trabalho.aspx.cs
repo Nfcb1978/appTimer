@@ -27,34 +27,34 @@ namespace appTimer
         {
             
 
-          /*   if (Session["utilizador"] == null)
+             if (Session["utilizador"] == null)
              {
            Response.Redirect("login.aspx");
              }
-             //Se não escolher cliente
-            if  (Session["cliente"] == null)
-                 {
-                    Response.Redirect("cliente.aspx");
-
-                  }
-             else
+            //Se não escolher cliente
+            if ((Session["trabalhoid"] == null) && (Request.QueryString["Ntrabalho"] == null))
             {
-                lbl_nome.Text = "Cliente: " + Session["cliente"].ToString() +"ID cliente "+ Session["idCliente"].ToString() +"iD Serviço" + Convert.ToString(Request.QueryString["idservico"]);
-            }
+                Response.Redirect("index.aspx");
 
-            //Verificar se existe serviço escolhido
-            if (Request.QueryString["servico"] == null)
-            {
-                Response.Redirect("servico.aspx");
             }
-            else
+            else if (Session["trabalhoid"] != null)
             {
-                lbl_servico.Text = "Serviço: " + Convert.ToString(Request.QueryString["servico"]);
-                Session["servico"] = lbl_servico.Text;
-            }
+                lbl_nome.Text = "Cliente: " + Session["cliente"].ToString();
 
-            */
-           
+
+
+                lbl_servico.Text = "Serviço: " + Session["servico"].ToString();
+
+            }
+            if (Request.QueryString["Ntrabalho"] != null)
+                    {
+                Session["trabalhoid"] = Convert.ToString(Request.QueryString["Ntrabalho"]);
+                Session["servico"] = Convert.ToString(Request.QueryString["servico"]);
+                Session["cliente"] = Convert.ToString(Request.QueryString["nome"]);
+                lbl_servico.Text = "Serviço: " + Session["servico"].ToString();
+                lbl_nome.Text = "Cliente: " + Session["cliente"].ToString();
+            }
+            
 
         }
 
@@ -85,6 +85,8 @@ namespace appTimer
             //Impedir que entrem para a base de dados tempos a "Zero"
             if ((int.Parse(hours) > 0) || (int.Parse(minutes) > 0) | (int.Parse(seconds) > 0))
             {
+                int id = int.Parse(HttpContext.Current.Session["trabalhoid"].ToString());
+
                 SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["TimerConnectionString"].ConnectionString);//estabilecer conexão
 
                 SqlCommand myCommando = new SqlCommand();//linha de comandos
@@ -95,6 +97,7 @@ namespace appTimer
                 myCommando.Parameters.AddWithValue("@Minutos", minutes);
                 myCommando.Parameters.AddWithValue("@Segundos", seconds);
                 myCommando.Parameters.AddWithValue("@RecordDate", DateTime.Today);
+                myCommando.Parameters.AddWithValue("@idtrabalho", id);
 
                 myConn.Open();
                 myCommando.ExecuteNonQuery();//Execução Procedure sem devolução de dados executa, mas não devolve nada
@@ -146,7 +149,7 @@ namespace appTimer
                 myCommando.Parameters.AddWithValue("@ct", contentType);
                 myCommando.Parameters.AddWithValue("@assinatura", imageBytes);
                  myCommando.Parameters.AddWithValue("@RecordDate", DateTime.Today);
-
+            myCommando.Parameters.AddWithValue("@idCliente", 1);
 
 
             //falta abrir conexão executar e fechar conexaão

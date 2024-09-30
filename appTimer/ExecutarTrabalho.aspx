@@ -131,7 +131,7 @@
                     <div class="card-body">
         
                  <h3 class="h3">
-                    <asp:Label ID="lbl_nome" runat="server" Text="Label"></asp:Label></h3>
+                    <asp:Label ID="lbl_nome" runat="server" Text=""></asp:Label></h3>
     
                           
                    
@@ -147,7 +147,7 @@
         
                 
        <h3 class="h3">
-                    <asp:Label ID="lbl_tarefa" runat="server" Text="Label"></asp:Label></h3>
+                    <asp:Label ID="lbl_tarefa" runat="server" Text=""></asp:Label></h3>
       
                       
                    

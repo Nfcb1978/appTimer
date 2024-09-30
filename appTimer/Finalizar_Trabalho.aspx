@@ -111,7 +111,7 @@
                     <div class="card-body">
         
                  <h5 class="h3">
-                    <asp:Label ID="lbl_nome" runat="server" Text="Nome" Font-Bold="True" Font-Size="Medium"></asp:Label></h5>
+                    <asp:Label ID="lbl_nome" runat="server" Text="" Font-Bold="True" Font-Size="Medium"></asp:Label></h5>
     
                           
                    
@@ -126,7 +126,7 @@
                     <div class="card-body">
         
                  <h5 class="h3">
-                    <asp:Label ID="lbl_tarefa" runat="server" Text="Tarefa" Font-Size="Medium" Font-Bold="True"></asp:Label></h5>
+                    <asp:Label ID="lbl_tarefa" runat="server" Text="" Font-Size="Medium" Font-Bold="True"></asp:Label></h5>
     
                           
                    
