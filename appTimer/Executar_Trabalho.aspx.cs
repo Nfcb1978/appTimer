@@ -32,7 +32,7 @@ namespace appTimer
            Response.Redirect("login.aspx");
              }
             //Se não escolher cliente
-            if ((Session["trabalhoid"] == null) && (Request.QueryString["Ntrabalho"] == null))
+            if ((Session["trabalhoid"] == null) && (Request.QueryString["NTrabalho"] == null))
             {
                 Response.Redirect("index.aspx");
 
@@ -41,20 +41,28 @@ namespace appTimer
             {
                 lbl_nome.Text = "Cliente: " + Session["cliente"].ToString();
 
-
-
                 lbl_servico.Text = "Serviço: " + Session["servico"].ToString();
 
             }
-            if (Request.QueryString["Ntrabalho"] != null)
+            if (Request.QueryString["NTrabalho"] != null)
                     {
-                Session["trabalhoid"] = Convert.ToString(Request.QueryString["Ntrabalho"]);
+                Session["trabalhoid"] = Convert.ToString(Request.QueryString["NTrabalho"]);
                 Session["servico"] = Convert.ToString(Request.QueryString["servico"]);
                 Session["cliente"] = Convert.ToString(Request.QueryString["nome"]);
+                Session["idcliente"] = Convert.ToString(Request.QueryString["codCliente"]);                              
                 lbl_servico.Text = "Serviço: " + Session["servico"].ToString();
                 lbl_nome.Text = "Cliente: " + Session["cliente"].ToString();
+                
             }
             
+
+        }
+        protected void SimularProcessamento(object sender, EventArgs e)
+        {
+
+          //  System.Threading.Thread.Sleep(10000);
+
+
 
         }
 
@@ -96,7 +104,7 @@ namespace appTimer
                 myCommando.Parameters.AddWithValue("@Horas", hours);
                 myCommando.Parameters.AddWithValue("@Minutos", minutes);
                 myCommando.Parameters.AddWithValue("@Segundos", seconds);
-                myCommando.Parameters.AddWithValue("@RecordDate", DateTime.Today);
+                myCommando.Parameters.AddWithValue("@RecordDate", DateTime.Now);
                 myCommando.Parameters.AddWithValue("@idtrabalho", id);
 
                 myConn.Open();
@@ -127,9 +135,10 @@ namespace appTimer
 
             return new { Horas = horas, Minutos = minutos, Segundos = segundos };
         }
-        [WebMethod]
+        [WebMethod(EnableSession = true)]
         public static void SaveSignature(string imageData, string contentType)
         {
+
             // Remove o prefixo "data:image/png;base64," da string base64
             string base64String = imageData.Replace("data:image/png;base64,", "");
 
@@ -141,31 +150,52 @@ namespace appTimer
 
             SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["TimerConnectionString"].ConnectionString);//estabilecer conexão
 
-                SqlCommand myCommando = new SqlCommand();//linha de comandos
-                myCommando.CommandType = CommandType.StoredProcedure; //vamos usar uma store procedure
-                myCommando.CommandText = "inserir_assinatura"; //cujo nome é... 
-                myCommando.Connection = myConn; //conexão a usar
-               ;
-                myCommando.Parameters.AddWithValue("@ct", contentType);
-                myCommando.Parameters.AddWithValue("@assinatura", imageBytes);
-                 myCommando.Parameters.AddWithValue("@RecordDate", DateTime.Today);
-            myCommando.Parameters.AddWithValue("@idCliente", 1);
+            SqlCommand myCommando = new SqlCommand();//linha de comandos
+            myCommando.CommandType = CommandType.StoredProcedure; //vamos usar uma store procedure
+            myCommando.CommandText = "inserir_assinatura"; //cujo nome é... 
+            myCommando.Connection = myConn; //conexão a usar
+
+            myCommando.Parameters.AddWithValue("@ct", contentType);
+            myCommando.Parameters.AddWithValue("@assinatura", imageBytes);
+            myCommando.Parameters.AddWithValue("@RecordDate", DateTime.Today);
+            // Obtendo a variável de sessão via HttpContext.Current
+            if (HttpContext.Current.Session["idCliente"] != null)
+            {
+                int idCliente = int.Parse(HttpContext.Current.Session["idCliente"].ToString());
+                myCommando.Parameters.AddWithValue("@idCliente", idCliente);  // Corrigi o nome do parâmetro para @idCliente
+            }
+            else
+            {
+                throw new Exception("Variável de sessão 'idCliente' não encontrada.");
+            }
 
 
-            //falta abrir conexão executar e fechar conexaão
+
+
+
+
+            // Abre a conexão, executa a consulta e fecha a conexão
             myConn.Open();
-                myCommando.ExecuteNonQuery();//Execução Procedure sem devolução de dados executa, mas não devolve nada
-                myConn.Close();
+            myCommando.ExecuteNonQuery(); // Execução da Procedure
+            myConn.Close();
 
 
 
 
 
-               
-           
         }
 
-      
+        protected void Btn_finalizar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Finalizar_Trabalho.aspx");
+        }
+
+        protected void Btn_comprar_Click(object sender, EventArgs e)
+        {
+            Session["trabalho"] = lbl_servico.Text;
+            Response.Redirect("Produtos.aspx");
+            
+        }
     }
 
 }

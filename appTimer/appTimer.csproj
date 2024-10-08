@@ -43,6 +43,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Programação Web Server side\iTextSharp\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>..\..\..\Programação Web Server side\iTextSharp\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra">
+      <HintPath>..\..\..\Programação Web Server side\iTextSharp\itextsharp.xtra.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -87,10 +97,12 @@
     <Content Include="alterarservico.aspx" />
     <Content Include="detalheCliente.aspx" />
     <Content Include="EntregaMaterial.aspx" />
-    <Content Include="ExecutarTrabalho.aspx" />
     <Content Include="Finalizar_Trabalho.aspx" />
     <Content Include="FormataManutencaoServicos.xslt" />
-    <Content Include="FormataTrbalhos.xslt" />
+    <Content Include="FormataTempos.xslt">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="FormataTrabalhos.xslt" />
     <Content Include="Imagens\cancel.png" />
     <Content Include="Imagens\confirmar.png" />
     <Content Include="Imagens\delete.png" />
@@ -130,8 +142,8 @@
     <Content Include="Produtos.aspx" />
     <Content Include="servico.aspx" />
     <Content Include="Trabalho.aspx" />
-    <Content Include="Trabalhos.aspx" />
-    <Content Include="Iniciar_Trabalho.aspx" />
+    <Content Include="ListaTrabalhos.aspx" />
+    <Content Include="Executar_Trabalho.aspx" />
     <Content Include="Trabalho_Detalhe.aspx" />
     <Content Include="Vendas.aspx" />
     <Content Include="Web.config" />
@@ -187,13 +199,6 @@
     </Compile>
     <Compile Include="EntregaMaterial.aspx.designer.cs">
       <DependentUpon>EntregaMaterial.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ExecutarTrabalho.aspx.cs">
-      <DependentUpon>ExecutarTrabalho.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ExecutarTrabalho.aspx.designer.cs">
-      <DependentUpon>ExecutarTrabalho.aspx</DependentUpon>
     </Compile>
     <Compile Include="Finalizar_Trabalho.aspx.cs">
       <DependentUpon>Finalizar_Trabalho.aspx</DependentUpon>
@@ -280,19 +285,19 @@
     <Compile Include="Trabalho.aspx.designer.cs">
       <DependentUpon>Trabalho.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Trabalhos.aspx.cs">
-      <DependentUpon>Trabalhos.aspx</DependentUpon>
+    <Compile Include="ListaTrabalhos.aspx.cs">
+      <DependentUpon>ListaTrabalhos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Trabalhos.aspx.designer.cs">
-      <DependentUpon>Trabalhos.aspx</DependentUpon>
+    <Compile Include="ListaTrabalhos.aspx.designer.cs">
+      <DependentUpon>ListaTrabalhos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Iniciar_Trabalho.aspx.cs">
-      <DependentUpon>Iniciar_Trabalho.aspx</DependentUpon>
+    <Compile Include="Executar_Trabalho.aspx.cs">
+      <DependentUpon>Executar_Trabalho.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Iniciar_Trabalho.aspx.designer.cs">
-      <DependentUpon>Iniciar_Trabalho.aspx</DependentUpon>
+    <Compile Include="Executar_Trabalho.aspx.designer.cs">
+      <DependentUpon>Executar_Trabalho.aspx</DependentUpon>
     </Compile>
     <Compile Include=".aspx.cs">
       <DependentUpon>.aspx</DependentUpon>
@@ -320,6 +325,75 @@
     <Content Include="Baseapp.Master" />
     <Content Include="Base2.Master" />
     <None Include="packages.config" />
+    <Content Include="PDFS\Gerados\6ZVO0NnLFS8EitmdQN1IhA==.pdf" />
+    <Content Include="PDFS\Gerados\6ZVO0NnLFS8gAoh5avk2WQ==.pdf" />
+    <Content Include="PDFS\Gerados\6ZVO0NnLFS8hfbbJLJLJLNAKBVQ==.pdf" />
+    <Content Include="PDFS\Gerados\6ZVO0NnLFS8hpRo0BCADQA==.pdf" />
+    <Content Include="PDFS\Gerados\6ZVO0NnLFS8J3XGv647llQ==.pdf" />
+    <Content Include="PDFS\Gerados\6ZVO0NnLFS8M47LusKLKLKxOVQ==.pdf" />
+    <Content Include="PDFS\Gerados\6ZVO0NnLFS8olxZTvL2nsQ==.pdf" />
+    <Content Include="PDFS\Gerados\6ZVO0NnLFS98GRq6M0Dusw==.pdf" />
+    <Content Include="PDFS\Gerados\6ZVO0NnLFS9BJev2VQJLJLJLosQ==.pdf" />
+    <Content Include="PDFS\Gerados\6ZVO0NnLFS9svSjNCNw24g==.pdf" />
+    <Content Include="PDFS\Gerados\6ZVO0NnLFSJLJLJLDuQjzIVBWmA==.pdf" />
+    <Content Include="PDFS\Gerados\6ZVO0NnLFSJLJLJLE4CvAJpgAoQ==.pdf" />
+    <Content Include="PDFS\Gerados\6ZVO0NnLFSJLJLJLNP0suguDYsw==.pdf" />
+    <Content Include="PDFS\Gerados\6ZVO0NnLFSJLJLJLumKEV81M9pA==.pdf" />
+    <Content Include="PDFS\Gerados\6ZVO0NnLFSKLKLK58CtsrvUr4w==.pdf" />
+    <Content Include="PDFS\Gerados\6ZVO0NnLFSKLKLKVafJNovaKuQ==.pdf" />
+    <Content Include="PDFS\Gerados\6ZVO0NnLFSKLKLKxLrM7JsmJ6A==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOra58CtsrvUr4w==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOra8FiDx9M72Cw==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOra9DPL2m4NTvg==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOrabvrAcwfJLJLJL4UQ==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOraio6lSOyayrw==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOraK4xZT6hcFUw==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOraplsKisM6Iyg==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOrb1WKLKLKPZvoRrJw==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOrb3OZ6dcBFJyg==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOrbJdrPJzKqz1g==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOrbluj7s9gy9ug==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOrbtHUT0oZEJsg==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOrbWFQqFUJC9kA==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOrbxQ0oKLKLKid6Y2g==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOrbY2CRKXYsciw==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOrby3jrDItsZHw==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOrY0lKLKLK0Wl8HP0A==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOrY6LaVfCsJLJLJLs7w==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOrYC7iW2eNEI3Q==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOrYgHbe3DQzzeg==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOrYGkzPZFYVIKQ==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOrYgrGvhVvKFKA==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOrYhuF24JFAp4Q==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOrYJDZJLJLJLsnBKLKLKJLJLJLzw==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOrYm7aEJF1i1BQ==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOrYO9EZWoGnWlQ==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOrYOAjnVqUSazg==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOrYzZLB5QHBggw==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOrZ4KLKLKBdD4kYHVA==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOrZbKLKLKXXSMntZbA==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOrZe7OMbyQhYEA==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOrZIpCQMGzIBog==.pdf" />
+    <Content Include="PDFS\Gerados\EaUQ1Q1VOrZu3o2EOhMcug==.pdf" />
+    <Content Include="PDFS\Gerados\OhI0KLKLKx9vsGGHIFshrnNoCg==.pdf" />
+    <Content Include="PDFS\Gerados\OhI0KLKLKx9vsGH4b0mfWDjyBg==.pdf" />
+    <Content Include="PDFS\Gerados\pgc4LRg8Ahc1hy5qDo1JLJLJLKA==.pdf" />
+    <Content Include="PDFS\Gerados\pgc4LRg8Ahcfs0vsROLfJLJLJLg==.pdf" />
+    <Content Include="PDFS\Gerados\pgc4LRg8AhcluoIcwQbLgg==.pdf" />
+    <Content Include="PDFS\Gerados\pgc4LRg8AhdCzRl9XsuV3Q==.pdf" />
+    <Content Include="PDFS\Gerados\pgc4LRg8AhdIahRo5xi0lg==.pdf" />
+    <Content Include="PDFS\Gerados\pgc4LRg8AhdsN1gXbULIMg==.pdf" />
+    <Content Include="PDFS\Gerados\pgc4LRg8Ahe0caAOYyVACw==.pdf" />
+    <Content Include="PDFS\Gerados\pgc4LRg8Ahe6KW70n7y27A==.pdf" />
+    <Content Include="PDFS\Gerados\pgc4LRg8AhegO60BmyKLKLKYWw==.pdf" />
+    <Content Include="PDFS\Gerados\pgc4LRg8AhehUivHnJKLKLKAJA==.pdf" />
+    <Content Include="PDFS\Gerados\pgc4LRg8Aheu2NkiJiC6Og==.pdf" />
+    <Content Include="PDFS\Gerados\pgc4LRg8Ahfb7VSe80sywg==.pdf" />
+    <Content Include="PDFS\Gerados\pgc4LRg8AhfJk7mgOQfryQ==.pdf" />
+    <Content Include="PDFS\Gerados\pgc4LRg8AhfJLJLJLy2pNaoO8XQ==.pdf" />
+    <Content Include="PDFS\Gerados\pgc4LRg8AhfrcjhrmdicIw==.pdf" />
+    <Content Include="PDFS\Gerados\PyI0qc8VfpCXD7ImUNBv9A==.pdf" />
+    <Content Include="PDFS\Template\form_template.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -16,18 +16,17 @@ namespace appTimer
     {
      
       int idcliente = 0;
-        
+       
         string idcarrinho = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-          
 
-               
-               
-            
 
-          
+        
+
+
+
+
             if (Session["utilizador"] == null)
             {
                 Response.Redirect("login.aspx");
@@ -59,14 +58,13 @@ namespace appTimer
 
 
          
-        }
+         }
 
-
-
+      
 
 
         [WebMethod(EnableSession = true)]
-        public static void SaveTrabalho(string imageData, string contentType)
+        public static void SaveSignature(string imageData, string contentType)
         {
 
 
@@ -98,10 +96,7 @@ namespace appTimer
             else
             {
                 throw new Exception("Variável de sessão 'idCliente' não encontrada.");
-            }
-
-
-          
+            }          
 
         
 
@@ -110,15 +105,13 @@ namespace appTimer
             myCommando.ExecuteNonQuery(); // Execução da Procedure
             myConn.Close();
             
-
-
-
         }
 
 
         protected void Btn_Confirma_Click(object sender, EventArgs e)
         {
             string valor = "";
+
             if (Session["idcarrinho"]!=null)
             {
                 valor = Session["idcarrinho"].ToString();
@@ -161,6 +154,7 @@ namespace appTimer
 
         protected void rtpProdutos_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
+           
 
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)//se o e for um item
             {//preencho os dados se o e for um item.
@@ -171,10 +165,34 @@ namespace appTimer
                 ((Label)e.Item.FindControl("lbl_preco")).Text = dr["Preco"].ToString() + " Eur";
                 ((Label)e.Item.FindControl("lbl_quantidade")).Text = dr["Total"].ToString();
                 ((Image)e.Item.FindControl("img_foto")).ImageUrl = "data:image/jpeg;base64," + Convert.ToBase64String((byte[])dr["foto"]);
-
+                ((ImageButton)e.Item.FindControl("btn_apaga")).CommandArgument = dr["idproduto"].ToString();
 
 
             }
+        }
+
+        protected void rtpProdutos_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            string valor = "";
+            valor = Session["idcarrinho"].ToString();
+            if (e.CommandName.Equals("btn_apaga")/*icon*/)
+            {
+                SqlConnection myConn = new SqlConnection
+                (ConfigurationManager.ConnectionStrings["TimerConnectionString"].ConnectionString);
+                string query = "delete from Carrinho ";
+
+                query += "where idproduto=" + ((ImageButton)e.Item.FindControl("btn_apaga")).CommandArgument;//associar oa botão
+                query += "and ordem=" +"'"+ valor + "'";
+               myConn.Open();//Abrir a conexão
+                SqlCommand myComand = new SqlCommand(query, myConn); //recebe e query e executa no myConn
+                myComand.ExecuteNonQuery(); 
+                myConn.Close();
+            }
+        }
+
+        protected void rtpProdutos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

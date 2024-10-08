@@ -139,14 +139,10 @@
             document.getElementById('start').style.display = 'none';
             document.getElementById('stop').style.display = 'inline';
 
-            if (window.location.pathname === "/Iniciar_Trabalho.aspx") {
-                executarTrabalho("https://localhost:44388/ExecutarTrabalho.aspx");
+           
             }
-        }
-        function executarTrabalho(url) {
-          
-            window.location.href = url; // Redireciona para a página especificada
-        }
+        
+       
         
         function stopTimer() {
             if (timer) {
@@ -243,7 +239,7 @@
                                     <img src="Imagens/Ativo 4.png" /></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Trabalhos.aspx">
+                                <a class="nav-link" href="ListaTrabalhos.aspx">
                                     <img src="Imagens/Ativo 5.png" /></a>
                             </li>
                             <li class="nav-item">

@@ -1,10 +1,22 @@
-﻿    <%@ Page Title="" Language="C#" MasterPageFile="~/Base2.Master" AutoEventWireup="true" CodeBehind="Iniciar_Trabalho.aspx.cs" Inherits="appTimer.validacao" %>
+﻿    <%@ Page Title="" Language="C#" MasterPageFile="~/Base2.Master" AutoEventWireup="true" CodeBehind="Executar_Trabalho.aspx.cs" Inherits="appTimer.validacao" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
  
   
     <style>
+        #img {
+    
+      justify-content: center; /* Centraliza horizontalmente */
+      align-items: center; /* Centraliza verticalmente */
+     
+      margin-top: 0px;
+      margin-bottom: 0px;
+      width: auto;
+      height: 100%;
+    }
+        
+        
         .signature {
             border: 1px solid #000;
             width: 100%;
@@ -45,10 +57,7 @@
             margin-top:5%;
         }
 
-        #cronometro {
-            color: white;
-          
-        }
+       
 
         .container {
             background-color: #333; /* Cor de fundo escura */
@@ -82,11 +91,7 @@
          }
        
 
-         .w-10
-         {
-                margin-left:20%;
-              background-color: #333;
-         }
+    
        
         
     </style>
@@ -114,7 +119,7 @@
         
                  <h3 class="h3">
                     <asp:Label ID="lbl_nome" runat="server" Text="" Font-Bold="True" Font-Size="XX-Large"></asp:Label></h3>
-    
+                    
                           
                    
                         </div>
@@ -140,6 +145,7 @@
 
                  <div class="card mb-3" style=" background-color:#333;  ">
              <div class="row g-0">
+                
               
                     <div class="card-body">
         
@@ -147,9 +153,16 @@
 <h2 class="btn-primary" style="width:100%"; id="cronometro">00:00:00</h2>
       
                       <h3 id="total" >Total Hoje: 00:00:00</h3>
-      
-                   
+
                         </div>
+                     <!-- GIF de carregamento manual para garantir que ele seja exibido -->
+
+  <div>
+<img id="img" src="relogio.gif" alt="Carregando..." />
+    </div> 
+   
+                   
+                        
                     </div>
                
            </div>
@@ -161,39 +174,40 @@
 
 
           
-         <div class="card mb-3" style=" background-color:#333 ">
-            <div class="row g-0">
-                <div class="col-md-12 ">
-                    <div class="left">
-                       
-                          <div class="input-group mx-sm-0 mb-2" >
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+    <ContentTemplate>
+        <!-- Label onde será exibida a mensagem após o processamento -->
+      
+    </ContentTemplate>
+</asp:UpdatePanel>
 
-                <input type="search" style=" color:white; background-color:darkslategray " class="form-control" placeholder="Procura um projecto..." >
-              
-                              <div class="input-group-append">
-                    <span class="input-group-text"><i class="fas fa-search" style="color:darkslategray"></i></span>
-                </div>
-            </div>
+<!-- UpdateProgress para exibir o GIF enquanto o servidor processa a requisição -->
+<asp:UpdateProgress ID="UpdateProgress1" runat="server">
+    <ProgressTemplate>
+        <img  src="relogio.gif" alt="Carregando..." />
+    </ProgressTemplate>
+</asp:UpdateProgress>
 
-                    </div>
-                </div>
-     
-            
-        </div>
+<!-- Botão invisível para fazer o postback via JavaScript -->
+<asp:Button ID="btnPostback" runat="server" OnClick="SimularProcessamento" style="display:none;" />
 
-       </div>
+<!-- Script para chamar o postback de forma assíncrona e exibir o GIF -->
+<script type="text/javascript">
+    window.onload = function () {
+        startTimer();
+        // Exibe o GIF de carregamento e dispara o processamento no servidor
+        document.getElementById('loadingGif').style.display = 'block'; // Exibe o GIF
 
-  
-  
-        <div class="col-12">
-            <div class="center">
-              
-                   
-                <br />
+        // Simula uma chamada AJAX via postback
+        setTimeout(function () {
+            __doPostBack('<%= btnPostback.UniqueID %>', ''); // Dispara o processamento no servidor
+        }, 500); // Espera meio segundo para garantir que o GIF seja exibido antes do postback
 
-               
-            </div>
-        </div>
+    };
+</script>
+
+
+       
     
 
 
@@ -204,12 +218,15 @@
         
         <div>
             <h4>Rubrica do Requerente de Serviço ou Anfitrião</h4>
-              <asp:TextBox ID="tbNome" runat="server" placeholder="Insira o seu nome" CssClass="form-control" required Font-Bold="True"></asp:TextBox>
+              <asp:TextBox ID="tbNome" runat="server" placeholder="Insira o seu nome" CssClass="form-control" Font-Bold="True"></asp:TextBox>
             <br />
             <canvas name="signature" id="signature" class="signature"></canvas>
      <br />
-            <button type="button" Class="btn-light w-10" onclick="clearSignature('signature')">Clear</button>
-       
+                   
+          <button type="button" Class="btn-light w-10" onclick="clearSignature('signature')">Apagar</button>
+                    
+            <button type="button"  Class="btn-light w-10"  onclick="saveSignature('signature')">Validar</button>
+      
           
 
             <br />
@@ -226,10 +243,14 @@
         <asp:TextBox ID="tb_Notas" CssClass="w-100" runat="server" TextMode="MultiLine" placeholder="Por favor deixe uma nota do serviço que vai efetuar" Font-Bold="True"></asp:TextBox>
        <br />
        
-         <button id="btn_iniciar" class="btn-primary w-100" type="button" onclick="Bfunction()">INICIAR TRABALHO</button>
-     
-   
-    </main>
+  <!--       <button id="btn_iniciar" class="btn-primary w-100" type="button" onclick="Bfunction()">INICIAR TRABALHO</button>-->
+         <div>
+          <asp:Button ID="Btn_comprar" OnClick="Btn_comprar_Click" runat="server" Text="COMPRAR" CssClass="btn-primary w-100" Font-Bold="True" />
+        </div>
+          <div>
+          <asp:Button ID="Btn_finalizar" OnClick="Btn_finalizar_Click" runat="server" Text="FINALIZAR TRABALHO" CssClass="btn-primary w-100" Font-Bold="True" />
+  </div>
+              </main>
           
     <script>
         
@@ -253,11 +274,11 @@
                 ctx.lineWidth = 2;
                 ctx.lineCap = 'round';
                 ctx.strokeStyle = '#000';
-                
-                ctx.lineTo((event.clientX - rect.left+75)/5, (event.clientY - rect.top+150)/4);
+
+                ctx.lineTo((event.clientX - rect.left + 75) / 5, (event.clientY - rect.top + 150) / 4);
                 ctx.stroke();
                 ctx.beginPath();
-                ctx.moveTo((event.clientX - rect.left+75)/5, (event.clientY - rect.top+150)/4);
+                ctx.moveTo((event.clientX - rect.left + 75) / 5, (event.clientY - rect.top + 150) / 4);
             }
         }
 
@@ -266,7 +287,7 @@
             const ctx = canvas.getContext('2d');
             ctx.clearRect(0, 0, canvas.width, canvas.height);
         }
-       
+
         function saveSignature(signature) {
             const canvas = document.getElementById(signature);
             if (!canvas) {
@@ -279,7 +300,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "Iniciar_Trabalho.aspx/SaveSignature",
+                url: "Executar_Trabalho.aspx/SaveSignature",
                 data: JSON.stringify({ imageData: dataURL, contentType: contentType }),
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",

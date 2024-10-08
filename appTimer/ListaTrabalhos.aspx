@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Baseapp.Master" AutoEventWireup="true" CodeBehind="Trabalhos.aspx.cs" Inherits="appTimer.Trabalhos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Baseapp.Master" AutoEventWireup="true" CodeBehind="ListaTrabalhos.aspx.cs" Inherits="appTimer.Trabalhos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -25,6 +25,7 @@
         body {
             background-color: #333; /* Cor de fundo escura */
             color: white;
+           
         }
 
         .corpo {
@@ -32,16 +33,7 @@
         }
       
           
-        .card-body{
-           
-            background-color:#333;  
-              
-        }
-         .card-body:hover{
-           
-            background-color:darkslategray;
-           
-        }
+       
           .mb-3 {
            
             background-color: aqua;
@@ -53,7 +45,7 @@
           .navegacao
           {
               margin-bottom: 10px;
-              
+              margin-left:10%;
           }
 
        
@@ -107,7 +99,7 @@
 
         
 
-        <asp:Xml ID="Xml1" runat="server" ValidateRequestMode="Disabled" TransformSource="~/FormataTrbalhos.xslt"></asp:Xml>
+        <asp:Xml ID="Xml1" runat="server" ValidateRequestMode="Disabled" TransformSource="~/FormataTrabalhos.xslt"></asp:Xml>
 
                  
        <!-- Botões de navegação para mudar de página -->

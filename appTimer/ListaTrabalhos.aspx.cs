@@ -44,12 +44,14 @@ namespace appTimer
               Response.Redirect("login.aspx");
             }
 
-            string query = "Select Clientes.nome, Servicos.servico, Trabalhos.comentario, Trabalhos.tempoPrevisto " +
-                " from Trabalhos inner join Clientes on " +
+            string query = "Select Clientes.nome, Trabalhos.NTrabalho, Servicos.servico, Trabalhos.comentario, Trabalhos.tempoPrevisto, " +
+                "Trabalhos.codigoCliente from Trabalhos inner join Clientes on " +
                 "Clientes.numero_Cliente = Trabalhos.codigoCliente inner join Assinaturas " +
                 "on Trabalhos.idassinatura = Assinaturas.id inner join Servicos on " +
                 "Servicos.id = Trabalhos.numeroServico inner join Carrinho on " +
-                "Carrinho.idtrabalho = Trabalhos.NTrabalho inner join Produtos on Carrinho.idproduto = Produtos.ID";
+                "Carrinho.idtrabalho = Trabalhos.NTrabalho inner join Produtos on Carrinho.idproduto = Produtos.ID " +
+                "GROUP BY Trabalhos.NTrabalho, Clientes.nome, Trabalhos.NTrabalho, Servicos.servico, " +
+                "Trabalhos.comentario, Trabalhos.tempoPrevisto,Trabalhos.codigoCliente";
 
 
 

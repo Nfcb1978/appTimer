@@ -67,8 +67,8 @@
         
         <div class="col-12">
             <div class="centro">
-                <h4 class="h4">
-                    <asp:Label ID="lbl_nome" runat="server" Text=""></asp:Label></h4>
+                <h3 class="h3">
+                    <asp:Label ID="lbl_nome" runat="server" Text=""></asp:Label></h3>
                 <br />
 
 

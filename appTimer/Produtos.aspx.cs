@@ -51,22 +51,47 @@ namespace appTimer
       
         protected void rtp_produtos_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
-            if (e.CommandName.Equals("btn_carrinho")/*icon*/)
+            if (Session["trabalho"] != null)
             {
-                SqlConnection myConn = new SqlConnection
-              (ConfigurationManager.ConnectionStrings["TimerConnectionString"].ConnectionString);
-                string query = "insert into carrinho (ordem, idCliente, idproduto, quantidade)";
-                query += "values('" + Session["idcarrinho"].ToString() + "',";
-                query += Session["idCliente"].ToString() + ",";
-                query +=   ((Label)e.Item.FindControl("lbl_cod")).Text + "," + 1+")";
-                
-                  
-               
-               
-                myConn.Open();//Abrir a conexão
-                SqlCommand myComand = new SqlCommand(query, myConn); //recebe e query e executa no myConn
-                myComand.ExecuteNonQuery();
-                myConn.Close();
+                if (e.CommandName.Equals("btn_carrinho")/*icon*/)
+                {
+                    SqlConnection myConn = new SqlConnection
+                  (ConfigurationManager.ConnectionStrings["TimerConnectionString"].ConnectionString);
+                    string query = "insert into carrinho (idcliente, idproduto, idtrabalho, quantidade)";
+                    query += "values(" + Session["trabalhoid"].ToString() + ",";
+                    query += ((Label)e.Item.FindControl("lbl_cod")).Text + ",";
+                    query += Session["trabalhoid"].ToString() + "," + 1 + ")";
+
+
+
+
+                    myConn.Open();//Abrir a conexão
+                    SqlCommand myComand = new SqlCommand(query, myConn); //recebe e query e executa no myConn
+                    myComand.ExecuteNonQuery();
+                    myConn.Close();
+                }
+            }
+
+                else
+                    {
+
+                        if (e.CommandName.Equals("btn_carrinho")/*icon*/)
+                        {
+                            SqlConnection myConn = new SqlConnection
+                          (ConfigurationManager.ConnectionStrings["TimerConnectionString"].ConnectionString);
+                            string query = "insert into carrinho (ordem, idCliente, idproduto, quantidade)";
+                            query += "values('" + Session["idcarrinho"].ToString() + "',";
+                            query += Session["idCliente"].ToString() + ",";
+                            query += ((Label)e.Item.FindControl("lbl_cod")).Text + "," + 1 + ")";
+
+
+
+
+                            myConn.Open();//Abrir a conexão
+                            SqlCommand myComand = new SqlCommand(query, myConn); //recebe e query e executa no myConn
+                            myComand.ExecuteNonQuery();
+                            myConn.Close();
+                        }
             }
         }
 
@@ -79,7 +104,14 @@ namespace appTimer
 
         protected void Btn_Confirmar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Trabalho.aspx");
+            if (Session["trabalho"] != null)
+            {
+                Response.Redirect("Executar_Trabalho.aspx");
+            }
+            else
+            {
+                Response.Redirect("Trabalho.aspx");
+            }
         }
     }
     }

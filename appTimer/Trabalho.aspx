@@ -134,6 +134,7 @@
 
        <div class="form-group">
          <label for="TempoPrevisto"><b>Tempo Previsto:</b></label>
+ 
             <asp:TextBox ID="TbTempoPrevisto" runat="server" placeholder="Insira Tempo Previsto" CssClass="form-control" Font-Bold="True"></asp:TextBox>
                </div>
           
@@ -143,7 +144,7 @@
         <div class="container">
   
 
-    <asp:Repeater ID="rtpProdutos" runat="server" DataSourceID="SqlDataSource1" OnItemDataBound="rtpProdutos_ItemDataBound" >
+    <asp:Repeater ID="rtpProdutos" runat="server" DataSourceID="SqlDataSource1" OnItemDataBound="rtpProdutos_ItemDataBound" OnItemCommand="rtpProdutos_ItemCommand" OnLoad="rtpProdutos_Load" >
 	
 	
 		<HeaderTemplate>
@@ -158,7 +159,7 @@
 
                                     <th scope="col">Quantidade</th>
                                     <th scope="col">Foto</th>
-                                                                       
+                                          <th scope="col"></th>                               
 
 
                                 </tr>
@@ -177,7 +178,8 @@
  <td><asp:Label ID="lbl_preco" runat="server" Font-Bold="True" Text=""></asp:Label> </td>              
     <td><asp:Label ID="lbl_quantidade" runat="server" Font-Bold="True" Text=""></asp:Label></td> 
        <td><asp:Image ID="img_foto" runat="server" Width="150" Height="100" /></td>                                         
-                   
+                 <td> <asp:ImageButton ID="btn_apaga" runat="server" Width="60" ImageUrl="~/Imagens/delete-32.png" CommandName="btn_apaga" />
+                            </td>
      
                                   </tr>                                      
                                                      
@@ -193,7 +195,8 @@
  <td><asp:Label ID="lbl_preco" runat="server" Font-Bold="True" Text=""></asp:Label> </td>              
     <td><asp:Label ID="lbl_quantidade" runat="server" Font-Bold="True" Text=""></asp:Label></td> 
        <td><asp:Image ID="img_foto" runat="server" Width="150" Height="100" /></td>                                         
-                   
+                      <td> <asp:ImageButton ID="btn_apaga" runat="server" Width="60" ImageUrl="~/Imagens/delete-32.png" CommandName="btn_apaga" />
+                            </td>
      
                                   </tr>              
 
@@ -217,7 +220,7 @@
          
         <div>
         
-            <h4>Rubrica do Requerente de Serviço ou Anfitrião</h4>
+            <h4>Rubrica do Requerente de Serviço ou Anfitrião </h4>
               <asp:TextBox ID="tbNome" runat="server" placeholder="Insira o seu nome" CssClass="form-control w-100" Font-Bold="True"></asp:TextBox>
             <br />
             <canvas name="signature" id="signature" class="signature"></canvas>
@@ -242,7 +245,7 @@
           </main>  
     
     <script>
-        
+     
         
         function setupCanvas(signature) {
             const canvas = document.getElementById(signature);
@@ -289,7 +292,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "Trabalho.aspx/SaveTrabalho",
+                url: "Trabalho.aspx/SaveSignature",
                 data: JSON.stringify({ imageData: dataURL, contentType: contentType }),
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",

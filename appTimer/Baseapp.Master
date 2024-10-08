@@ -35,21 +35,7 @@
     <script type="text/javascript">
      
         
-        //Adicional para scroll
-        window.onload = function () {
-            // Salva a posição atual da barra de rolagem quando a página é carregada
-            var scrollPosition = sessionStorage.getItem("scrollPosition");
-
-            // Restaura a posição da barra de rolagem se existir
-            if (scrollPosition) {
-                window.scrollTo(0, scrollPosition);
-            }
-
-            // Adiciona um ouvinte para o evento de rolagem
-            window.addEventListener("scroll", function () {
-                // Salva a posição da barra de rolagem quando a página é rolada
-                sessionStorage.setItem("scrollPosition", window.scrollY);
-            });
+    
           
 
 
@@ -166,7 +152,7 @@
                                     <img src="Imagens/Ativo 4.png" /></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Trabalhos.aspx">
+                                <a class="nav-link" href="ListaTrabalhos.aspx">
                                     <img src="Imagens/Ativo 5.png" /></a>
                             </li>
                             <li class="nav-item">

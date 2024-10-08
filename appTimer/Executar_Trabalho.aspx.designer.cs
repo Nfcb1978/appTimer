@@ -11,7 +11,7 @@ namespace appTimer
 {
 
 
-    public partial class ExecutarTrabalho
+    public partial class validacao
     {
 
         /// <summary>
@@ -24,22 +24,13 @@ namespace appTimer
         protected global::System.Web.UI.WebControls.Label lbl_nome;
 
         /// <summary>
-        /// lbl_tarefa control.
+        /// lbl_servico control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_tarefa;
-
-        /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label lbl_servico;
 
         /// <summary>
         /// UpdatePanel1 control.
@@ -69,6 +60,15 @@ namespace appTimer
         protected global::System.Web.UI.WebControls.Button btnPostback;
 
         /// <summary>
+        /// tbNome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbNome;
+
+        /// <summary>
         /// tb_Notas control.
         /// </summary>
         /// <remarks>
@@ -76,5 +76,23 @@ namespace appTimer
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tb_Notas;
+
+        /// <summary>
+        /// Btn_comprar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Btn_comprar;
+
+        /// <summary>
+        /// Btn_finalizar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Btn_finalizar;
     }
 }

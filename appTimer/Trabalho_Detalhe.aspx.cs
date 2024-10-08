@@ -31,7 +31,7 @@ namespace appTimer
 
             SqlCommand myCommando = new SqlCommand();//linha de comandos
             myCommando.CommandType = CommandType.StoredProcedure; //vamos usar uma store procedure
-            myCommando.CommandText = "trabalho_detalhe"; //cujo nome é... 
+            myCommando.CommandText = "trabalho_detalhe1"; //cujo nome é... 
             myCommando.Connection = myConn; //conexão a usar
             myCommando.Parameters.AddWithValue("@entrada", entrada);
 
@@ -52,7 +52,7 @@ namespace appTimer
 
             myConn.Close();
         }
-
+        
         protected void rtp_Produto_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)//se o e for um item
@@ -72,7 +72,7 @@ namespace appTimer
 
         protected void Btn_Confirma_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Iniciar_Trabalho.aspx");
+            Response.Redirect("Executar_Trabalho.aspx");
         }
     }
 }
